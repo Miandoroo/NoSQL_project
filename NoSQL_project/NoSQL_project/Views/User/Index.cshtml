@@ -1,0 +1,23 @@
+﻿@model List<Users>
+
+<h1>Users</h1>
+
+<form method="post" asp-action="Create">
+    <input name="name" placeholder="Name" required />
+    <input name="email" placeholder="Email" type="email" required />
+</form>
+
+<table>
+    <thead>
+        <tr><th>Name</th><th>Email</th></tr>
+    </thead>
+    <tbody>
+        @foreach (Users users in Model)
+        {
+            <tr>
+                <td>@users.FirstName</td>
+                <td>@users.Email</td>
+            </tr>
+        }
+    </tbody>
+</table>

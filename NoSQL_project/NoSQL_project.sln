@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35828.75
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoSQL_project", "NoSQL_project\NoSQL_project.csproj", "{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoSQL_Project_Mongo", "NoSQL_Project_Mongo\NoSQL_Project_Mongo.csproj", "{C30EE14F-D474-4AC0-A8A3-5D37927B1896}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C30EE14F-D474-4AC0-A8A3-5D37927B1896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C30EE14F-D474-4AC0-A8A3-5D37927B1896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C30EE14F-D474-4AC0-A8A3-5D37927B1896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C30EE14F-D474-4AC0-A8A3-5D37927B1896}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51B37624-1CA4-4B78-A51C-582A89A28BBB}
+	EndGlobalSection
+EndGlobal
