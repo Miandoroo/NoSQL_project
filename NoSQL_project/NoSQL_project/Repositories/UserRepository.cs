@@ -1,4 +1,5 @@
 ﻿using MongoDB.Driver;
+using MongoDB.Bson;
 using NoSQL_project.Models;
 using NoSQL_project.Repositories.Interfaces;
 
@@ -27,6 +28,21 @@ namespace NoSQL_project.Repositories
         public void Add(Users user)
         {
             _userss.InsertOne(user);
+        }
+
+        public void Delete(string id)
+        {
+            _userss.DeleteOne(user => user.Id == id);
+        }
+
+        public List<Users> GetByType(string type)
+        {
+            return _userss.Find(user => user.Type == type).ToList();
+        }
+
+        public List<Users> GetByLocation(string location)
+        {
+            return _userss.Find(user => user.Location == location).ToList();
         }
 
     }

@@ -1,6 +1,7 @@
 ﻿@model List<Tickets>
 
 <h1>Tickets</h1>
+
 <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
     <thead style="background-color: #f2f2f2;">
         <tr>
@@ -11,6 +12,7 @@
             <th>DeadLine</th>
             <th>Priority</th>
             <th>Description</th>
+            <th style="width: 200px;">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -24,6 +26,16 @@
                 <td>@tickets.Deadline</td>
                 <td>@tickets.Priority</td>
                 <td>@tickets.Description</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@tickets.Id" class="btn btn-sm btn-info">
+                        <i class="bi bi-eye"></i> Details
+                    </a>
+                    <form asp-action="Delete" asp-route-id="@tickets.Id" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this ticket?')">
+                            <i class="bi bi-trash"></i> Delete
+                        </button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>

@@ -1,6 +1,8 @@
 ﻿using MongoDB.Driver;
+using MongoDB.Bson;
 using NoSQL_project.Models;
 using NoSQL_project.Repositories.Interfaces;
+using System.Linq;
 
 
 namespace NoSQL_project.Repositories
@@ -28,6 +30,26 @@ namespace NoSQL_project.Repositories
                 tickets.Id = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
 
             _ticketss.InsertOne(tickets);
+        }
+
+        public void Delete(string id)
+        {
+            _ticketss.DeleteOne(ticket => ticket.Id == id);
+        }
+
+        public List<Tickets> GetByUserId(string userId)
+        {
+            return _ticketss.Find(ticket => ticket.UserId == userId).ToList();
+        }
+
+        public List<Tickets> GetByStatus(int status)
+        {
+            return _ticketss.Find(ticket => ticket.Status == status).ToList();
+        }
+
+        public List<Tickets> GetByPriority(string priority)
+        {
+            return _ticketss.Find(ticket => ticket.Priority == priority).ToList();
         }
         
     }

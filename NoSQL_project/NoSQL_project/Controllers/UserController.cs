@@ -36,5 +36,43 @@ namespace NoSQL_project.Controllers
             TempData["Success"] = "User successfully added!";
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Details(string id)
+        {
+            var user = _repo.GetById(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            return View(user);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(string id)
+        {
+            var user = _repo.GetById(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            _repo.Delete(id);
+            TempData["Success"] = "User successfully deleted!";
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult ByType(string type)
+        {
+            var users = _repo.GetByType(type);
+            ViewBag.Type = type;
+            return View("Index", users);
+        }
+
+        public IActionResult ByLocation(string location)
+        {
+            var users = _repo.GetByLocation(location);
+            ViewBag.Location = location;
+            return View("Index", users);
+        }
     }
 }

@@ -8,7 +8,9 @@ namespace NoSQL_project.Repositories.Interfaces
         void Add(Tickets tickets);
         Tickets? GetById(string id);
         //void Update(Tickets tickets);
-        //void Delete(string id);
-
+        void Delete(string id);
+        List<Tickets> GetByUserId(string userId);
+        List<Tickets> GetByStatus(int status);
+        List<Tickets> GetByPriority(string priority);
     }
 }

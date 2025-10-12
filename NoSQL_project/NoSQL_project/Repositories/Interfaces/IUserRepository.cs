@@ -8,8 +8,9 @@ namespace NoSQL_project.Repositories.Interfaces
             void Add(Users user);
             Users? GetById(string id);
             //void Update(Users user);
-            //void Delete(string id);
-
+            void Delete(string id);
+            List<Users> GetByType(string type);
+            List<Users> GetByLocation(string location);
         }
     
 }

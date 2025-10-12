@@ -32,5 +32,50 @@ namespace NoSQL_project.Controllers
             _repo.Add(ticket);
             return RedirectToAction("Index", "User");
         }
+
+        public IActionResult Details(string id)
+        {
+            var ticket = _repo.GetById(id);
+            if (ticket == null)
+            {
+                return NotFound();
+            }
+            return View(ticket);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(string id)
+        {
+            var ticket = _repo.GetById(id);
+            if (ticket == null)
+            {
+                return NotFound();
+            }
+
+            _repo.Delete(id);
+            TempData["Success"] = "Ticket successfully deleted!";
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult ByUser(string userId)
+        {
+            var tickets = _repo.GetByUserId(userId);
+            ViewBag.UserId = userId;
+            return View("Index", tickets);
+        }
+
+        public IActionResult ByStatus(int status)
+        {
+            var tickets = _repo.GetByStatus(status);
+            ViewBag.Status = status;
+            return View("Index", tickets);
+        }
+
+        public IActionResult ByPriority(string priority)
+        {
+            var tickets = _repo.GetByPriority(priority);
+            ViewBag.Priority = priority;
+            return View("Index", tickets);
+        }
     }
 }
