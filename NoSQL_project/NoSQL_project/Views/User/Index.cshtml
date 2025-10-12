@@ -4,13 +4,17 @@
     ViewData["Title"] = "UserList";
 }
 
+
+
+<h1>Users</h1>
+
 <div class="mb-3">
     <a asp-action="Create" class="btn btn-success">
-        <i class="bi bi-plus-circle"></i> New User
+        <i class="bi bi-plus-circle"></i> Make a new User
     </a>
 </div>
 
-<h1>Users</h1>
+
 <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
     <thead style="background-color: #f2f2f2;">
         <tr>
@@ -20,6 +24,7 @@
             <th>PhoneNumber</th>
             <th>Location</th>
             <th>Type</th>
+            <th style="width: 200px;">Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -32,6 +37,14 @@
                 <td>@users.PhoneNumber</td>
                 <td>@users.Location</td>
                 <td>@users.Type</td>
+                <td>
+                    <a asp-controller="Ticket"
+                       asp-action="Create"
+                       asp-route-userId="@users.Id"
+                       class="btn btn-sm btn-primary">
+                        <i class="bi bi-ticket-perforated"></i> Make a new ticket
+                    </a>
+                </td>
             </tr>
         }
     </tbody>

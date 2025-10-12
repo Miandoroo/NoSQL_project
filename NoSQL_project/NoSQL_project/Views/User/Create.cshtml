@@ -3,7 +3,7 @@
     ViewData["Title"] = "Nieuwe gebruiker";
 }
 
-<h2>Nieuwe gebruiker</h2>
+<h2>New User</h2>
 
 @if (TempData["Error"] is string err && !string.IsNullOrWhiteSpace(err))
 {
@@ -11,7 +11,6 @@
 }
 
 <form asp-controller="User" asp-action="Create" method="post">
-    @Html.AntiForgeryToken()
     <div asp-validation-summary="All" class="text-danger"></div>
 
     <div class="mb-3">
@@ -63,6 +62,4 @@
     <a asp-action="Index" class="btn btn-secondary">Annuleren</a>
 </form>
 
-@section Scripts {
-    <partial name="_ValidationScriptsPartial" />
-}
+

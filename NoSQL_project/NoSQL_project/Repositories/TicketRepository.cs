@@ -18,5 +18,17 @@ namespace NoSQL_project.Repositories
         {
             return _ticketss.Find(_ => true).ToList();
         }
+        public Tickets? GetById(string id)
+        {
+            return _ticketss.Find(Tickets => Tickets.Id == id).FirstOrDefault();
+        }
+        public void Add(Tickets tickets)
+        {
+            if (string.IsNullOrEmpty(tickets.Id))
+                tickets.Id = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
+
+            _ticketss.InsertOne(tickets);
+        }
+        
     }
 }

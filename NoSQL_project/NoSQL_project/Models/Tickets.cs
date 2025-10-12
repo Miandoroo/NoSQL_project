@@ -5,6 +5,7 @@ namespace NoSQL_project.Models
 {
     public class Tickets
     {
+        public Tickets() { }
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
@@ -22,6 +23,8 @@ namespace NoSQL_project.Models
         public string Priority { get; set; }
         [BsonElement("description")]
         public string Description { get; set; }
+
+
         [BsonElement("userId")]
         [BsonRepresentation(BsonType.ObjectId)]
         public string UserId { get; set; }
