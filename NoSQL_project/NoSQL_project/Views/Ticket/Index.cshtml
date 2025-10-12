@@ -24,6 +24,14 @@
                 <td>@tickets.Deadline</td>
                 <td>@tickets.Priority</td>
                 <td>@tickets.Description</td>
+                <td>
+                    <a asp-controller="Ticket"
+                       asp-action="Update"
+                       asp-route-id="@tickets.Id"
+                       class="btn btn-sm btn-primary">
+                        <i class="bi bi-ticket-perforated"></i> Editing existing ticket
+                    </a>
+                </td>
             </tr>
         }
     </tbody>

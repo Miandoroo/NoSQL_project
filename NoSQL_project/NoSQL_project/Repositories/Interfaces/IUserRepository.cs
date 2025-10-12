@@ -7,7 +7,7 @@ namespace NoSQL_project.Repositories.Interfaces
             List<Users> GetAll();
             void Add(Users user);
             Users? GetById(string id);
-            //void Update(Users user);
+            void Update(string id, Users user);
             //void Delete(string id);
 
         }

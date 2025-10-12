@@ -7,7 +7,7 @@ namespace NoSQL_project.Repositories.Interfaces
         List<Tickets> GetAll();
         void Add(Tickets tickets);
         Tickets? GetById(string id);
-        //void Update(Tickets tickets);
+        void Update(string id, Tickets tickets);
         //void Delete(string id);
 
     }

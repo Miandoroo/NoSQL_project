@@ -29,5 +29,12 @@ namespace NoSQL_project.Repositories
             _userss.InsertOne(user);
         }
 
+        public void Update(string id, Users user)
+        {
+            _userss.ReplaceOne(user => user.Id == id, user);
+        }
+
+
+        
     }
 }
