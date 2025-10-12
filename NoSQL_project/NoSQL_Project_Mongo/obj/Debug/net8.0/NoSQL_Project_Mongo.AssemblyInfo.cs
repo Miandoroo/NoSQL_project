@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NoSQL_Project_Mongo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2a41827a9a2f4dd86c0268e26432c718bdd50431")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f881497198e0a94a74178a52643dea95bf7e7bb")]
 [assembly: System.Reflection.AssemblyProductAttribute("NoSQL_Project_Mongo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NoSQL_Project_Mongo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -4676,23 +4676,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\migue\\.nuget\\packages\\": {},
-    "D:\\Visual Studio\\Componentes\\NuGetPackages": {}
+    "C:\\Users\\kuba2\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj",
+      "projectUniqueName": "C:\\Users\\kuba2\\Downloads\\Nieuwe map (6)\\NoSQL_project\\NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj",
       "projectName": "NoSQL_Project_Mongo",
-      "projectPath": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj",
-      "packagesPath": "C:\\Users\\migue\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_Project_Mongo\\obj\\",
+      "projectPath": "C:\\Users\\kuba2\\Downloads\\Nieuwe map (6)\\NoSQL_project\\NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj",
+      "packagesPath": "C:\\Users\\kuba2\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kuba2\\Downloads\\Nieuwe map (6)\\NoSQL_project\\NoSQL_Project_Mongo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Visual Studio\\Componentes\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\migue\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kuba2\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4719,7 +4719,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -4770,7 +4770,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
