@@ -3,64 +3,64 @@
   "WorkspaceRootPath": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\models\\tickets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\models\\tickets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\models\\tickets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\models\\tickets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C30EE14F-D474-4AC0-A8A3-5D37927B1896}|NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project_mongo\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C30EE14F-D474-4AC0-A8A3-5D37927B1896}|NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj|solutionrelative:nosql_project_mongo\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C30EE14F-D474-4AC0-A8A3-5D37927B1896}|NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project_mongo\\mongoconnectivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C30EE14F-D474-4AC0-A8A3-5D37927B1896}|NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj|solutionrelative:nosql_project_mongo\\mongoconnectivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\repositories\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\repositories\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\views\\ticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\ticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\repositories\\interfaces\\iticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\repositories\\interfaces\\iticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C30EE14F-D474-4AC0-A8A3-5D37927B1896}|NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project_mongo\\nosql_project_mongo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C30EE14F-D474-4AC0-A8A3-5D37927B1896}|NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj|solutionrelative:nosql_project_mongo\\nosql_project_mongo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\nosql_project.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\nosql_project.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\source\\repos\\nosql_project\\nosql_project\\nosql_project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -70,8 +70,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 670,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "NoSQL_project\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "NoSQL_project\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAB8AAAB4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T13:52:30.073Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:2:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
@@ -86,59 +100,149 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Users.cs",
-              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Models\\Users.cs",
-              "RelativeDocumentMoniker": "NoSQL_project\\Models\\Users.cs",
-              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Models\\Users.cs",
-              "RelativeToolTip": "NoSQL_project\\Models\\Users.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Program.cs",
+              "RelativeDocumentMoniker": "NoSQL_project\\Program.cs",
+              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Program.cs",
+              "RelativeToolTip": "NoSQL_project\\Program.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDEAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T13:29:50.102Z",
+              "WhenOpened": "2025-10-12T16:14:39.787Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Repositories\\UserRepository.cs",
-              "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Repositories\\UserRepository.cs",
-              "RelativeToolTip": "NoSQL_project\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T13:41:23.025Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Tickets.cs",
               "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Models\\Tickets.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\Tickets.cs",
               "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Models\\Tickets.cs",
               "RelativeToolTip": "NoSQL_project\\Models\\Tickets.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-12T13:29:41.441Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Users.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "NoSQL_project\\Models\\Users.cs",
+              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Models\\Users.cs",
+              "RelativeToolTip": "NoSQL_project\\Models\\Users.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T13:29:50.102Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TicketController.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Controllers\\TicketController.cs",
+              "RelativeDocumentMoniker": "NoSQL_project\\Controllers\\TicketController.cs",
+              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Controllers\\TicketController.cs",
+              "RelativeToolTip": "NoSQL_project\\Controllers\\TicketController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T16:08:59.025Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TicketRepository.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Repositories\\TicketRepository.cs",
+              "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\TicketRepository.cs",
+              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Repositories\\TicketRepository.cs",
+              "RelativeToolTip": "NoSQL_project\\Repositories\\TicketRepository.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAQwBIAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T16:06:12.704Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ITicketRepository.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Repositories\\Interfaces\\ITicketRepository.cs",
+              "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\Interfaces\\ITicketRepository.cs",
+              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Repositories\\Interfaces\\ITicketRepository.cs",
+              "RelativeToolTip": "NoSQL_project\\Repositories\\Interfaces\\ITicketRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T16:05:43.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Index.cshtml",
+              "RelativeDocumentMoniker": "NoSQL_project\\Views\\Ticket\\Index.cshtml",
+              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Index.cshtml",
+              "RelativeToolTip": "NoSQL_project\\Views\\Ticket\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T16:01:38.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Views\\User\\Index.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\User\\Index.cshtml",
               "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Views\\User\\Index.cshtml",
               "RelativeToolTip": "NoSQL_project\\Views\\User\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-12T13:50:53.463Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NoSQL_project.csproj",
+              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\NoSQL_project.csproj",
+              "RelativeDocumentMoniker": "NoSQL_project\\NoSQL_project.csproj",
+              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\NoSQL_project.csproj",
+              "RelativeToolTip": "NoSQL_project\\NoSQL_project.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-12T15:39:31.937Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "NoSQL_Project_Mongo.csproj",
+              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj",
+              "RelativeDocumentMoniker": "NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj",
+              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj",
+              "RelativeToolTip": "NoSQL_Project_Mongo\\NoSQL_Project_Mongo.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-12T15:39:32.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 7,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "NoSQL_project\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-12T15:50:46.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\appsettings.json",
               "RelativeDocumentMoniker": "NoSQL_project\\appsettings.json",
@@ -150,7 +254,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": ".gitignore",
               "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\.gitignore",
               "RelativeDocumentMoniker": "NoSQL_project\\.gitignore",
@@ -162,7 +266,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": ".env",
               "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\.env",
               "RelativeDocumentMoniker": "NoSQL_project\\.env",
@@ -170,107 +274,8 @@
               "RelativeToolTip": "NoSQL_project\\.env",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-12T13:05:18.071Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "MongoConnectivity.cs",
-              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_Project_Mongo\\MongoConnectivity.cs",
-              "RelativeDocumentMoniker": "NoSQL_Project_Mongo\\MongoConnectivity.cs",
-              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_Project_Mongo\\MongoConnectivity.cs",
-              "RelativeToolTip": "NoSQL_Project_Mongo\\MongoConnectivity.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwBoAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T13:09:23.059Z",
+              "WhenOpened": "2025-10-12T13:05:18.071Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UserController.cs",
-              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Controllers\\UserController.cs",
-              "RelativeDocumentMoniker": "NoSQL_project\\Controllers\\UserController.cs",
-              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Controllers\\UserController.cs",
-              "RelativeToolTip": "NoSQL_project\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T13:46:09.148Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "NoSQL_project\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "NoSQL_project\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T13:54:11.963Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Program.cs",
-              "RelativeDocumentMoniker": "NoSQL_project\\Program.cs",
-              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Program.cs",
-              "RelativeToolTip": "NoSQL_project\\Program.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAcwBsAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T13:23:37.621Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "NoSQL_project\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "NoSQL_project\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-12T13:52:30.073Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Repositories\\Interfaces\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\Interfaces\\IUserRepository.cs",
-              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Repositories\\Interfaces\\IUserRepository.cs",
-              "RelativeToolTip": "NoSQL_project\\Repositories\\Interfaces\\IUserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T13:39:13.661Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": ".env",
-              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_Project_Mongo\\.env",
-              "RelativeDocumentMoniker": "NoSQL_Project_Mongo\\.env",
-              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_Project_Mongo\\.env",
-              "RelativeToolTip": "NoSQL_Project_Mongo\\.env",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-12T14:47:42.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ErrorViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Models\\ErrorViewModel.cs",
-              "RelativeDocumentMoniker": "NoSQL_project\\Models\\ErrorViewModel.cs",
-              "ToolTip": "C:\\Users\\migue\\source\\repos\\NoSQL_project\\NoSQL_project\\NoSQL_project\\Models\\ErrorViewModel.cs",
-              "RelativeToolTip": "NoSQL_project\\Models\\ErrorViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-12T13:56:34.741Z"
             }
           ]
         },

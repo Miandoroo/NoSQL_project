@@ -1,0 +1,30 @@
+﻿@model List<Tickets>
+
+<h1>Users</h1>
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead style="background-color: #f2f2f2;">
+        <tr>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Incident Subject</th>
+            <th>Incident Type</th>
+            <th>DeadLine</th>
+            <th>Priority</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Tickets tickets in Model)
+        {
+            <tr>
+                <td>@tickets.Date</td>
+                <td>@tickets.Status</td>
+                <td>@tickets.IncidentSubject</td>
+                <td>@tickets.IncidentType</td>
+                <td>@tickets.Deadline</td>
+                <td>@tickets.Priority</td>
+                <td>@tickets.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>

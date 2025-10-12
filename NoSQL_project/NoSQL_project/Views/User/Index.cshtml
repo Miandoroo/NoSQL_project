@@ -1,22 +1,27 @@
 ﻿@model List<Users>
 
 <h1>Users</h1>
-
-<form method="post" asp-action="Create">
-    <input name="name" placeholder="Name" required />
-    <input name="email" placeholder="Email" type="email" required />
-</form>
-
-<table>
-    <thead>
-        <tr><th>Name</th><th>Email</th></tr>
+<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <thead style="background-color: #f2f2f2;">
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>Email</th>
+            <th>PhoneNumber</th>
+            <th>Location</th>
+            <th>Type</th>
+        </tr>
     </thead>
     <tbody>
         @foreach (Users users in Model)
         {
             <tr>
                 <td>@users.FirstName</td>
+                <td>@users.LastName</td>
                 <td>@users.Email</td>
+                <td>@users.PhoneNumber</td>
+                <td>@users.Location</td>
+                <td>@users.Type</td>
             </tr>
         }
     </tbody>

@@ -8,14 +8,35 @@ namespace NoSQL_project.Models
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }
-        public string date { get; set; }
-        public int status { get; set; }
-        public string incidentSubject { get; set; }
+        [BsonElement("date")]
+        public string Date { get; set; }
+        [BsonElement("status")]
+        public int Status { get; set; }
+        [BsonElement("incidentSubject")]
+        public string IncidentSubject { get; set; }
+        [BsonElement("incidentType")]
+        public string IncidentType { get; set; }
+        [BsonElement("deadline")]
+        public string Deadline { get; set; }
+        [BsonElement("priority")]
+        public string Priority { get; set; }
+        [BsonElement("description")]
+        public string Description { get; set; }
+        [BsonElement("userId")]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string UserId { get; set; }
 
-        public string incidentType { get; set; }
-        public string deadline { get; set; }
-        public string priority { get; set; }
-        public string description { get; set; }
-        public string userId { get; set; }
+        public Tickets(string id, string date, int status, string incidentSubject, string incidentType, string deadline, string priority, string description, string userId)
+        {
+            Id = id;
+            Date = date;
+            Status = status;
+            IncidentSubject = incidentSubject;
+            IncidentType = incidentType;
+            Deadline = deadline;
+            Priority = priority;
+            Description = description;
+            UserId = userId;
+        }
     }
 }
