@@ -1,5 +1,15 @@
 ﻿@model List<Users>
 
+@{
+    ViewData["Title"] = "UserList";
+}
+
+<div class="mb-3">
+    <a asp-action="Create" class="btn btn-success">
+        <i class="bi bi-plus-circle"></i> New User
+    </a>
+</div>
+
 <h1>Users</h1>
 <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
     <thead style="background-color: #f2f2f2;">

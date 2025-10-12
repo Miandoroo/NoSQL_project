@@ -3,6 +3,7 @@ using NoSQL_project.Models;
 using NoSQL_project.Repositories.Interfaces;
 
 
+
 namespace NoSQL_project.Repositories
 {
     public class UserRepository : IUserRepository
@@ -15,9 +16,17 @@ namespace NoSQL_project.Repositories
 
         public List<Users> GetAll()
         {
-            List<Users> users = _userss.Find(FilterDefinition<Users>.Empty)
-                .ToList();
-            return users;
+            return _userss.Find(_ => true).ToList();
+        }
+
+        public Users? GetById(string id)
+        {
+            return _userss.Find(user => user.Id == id).FirstOrDefault();
+        }
+
+        public void Add(Users user)
+        {
+            _userss.InsertOne(user);
         }
 
     }

@@ -12,16 +12,29 @@ namespace NoSQL_project.Controllers
 
         public IActionResult Index()
         {
-            try
-            {
-                List<Users> users = _repo.GetAll();
-                return View(users);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return View("Error");
-            }
+               List<Users> users = _repo.GetAll();
+               return View(users);
+        }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Users user)
+        {
+            ModelState.Remove(nameof(Users.Id));
+            if (!ModelState.IsValid) 
+                return View(user);
+            if (string.IsNullOrEmpty(user.Id))
+                user.Id = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
+
+
+            _repo.Add(user);
+            TempData["Success"] = "User successfully added!";
+            return RedirectToAction(nameof(Index));
         }
     }
 }

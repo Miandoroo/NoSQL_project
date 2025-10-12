@@ -1,9 +1,12 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+
 namespace NoSQL_project.Models
 {
     public class Users
     {
+        public Users() { }
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         public string Id { get; set; }

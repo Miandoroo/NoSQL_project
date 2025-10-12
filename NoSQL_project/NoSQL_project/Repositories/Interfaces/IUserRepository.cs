@@ -5,8 +5,8 @@ namespace NoSQL_project.Repositories.Interfaces
         public interface IUserRepository
         {
             List<Users> GetAll();
-            //void Add(Users user);
-           // Users? GetById(string id);
+            void Add(Users user);
+            Users? GetById(string id);
             //void Update(Users user);
             //void Delete(string id);
 

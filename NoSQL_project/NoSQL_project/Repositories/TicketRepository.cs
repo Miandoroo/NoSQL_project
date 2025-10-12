@@ -16,9 +16,7 @@ namespace NoSQL_project.Repositories
 
         public List<Tickets> GetAll()
         {
-            List<Tickets> ticket = _ticketss.Find(FilterDefinition<Tickets>.Empty)
-                .ToList();
-            return ticket;
+            return _ticketss.Find(_ => true).ToList();
         }
     }
 }
