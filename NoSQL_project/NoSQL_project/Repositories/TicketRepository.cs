@@ -32,6 +32,11 @@ namespace NoSQL_project.Repositories
             _ticketss.InsertOne(tickets);
         }
 
+        public void Update(string id, Tickets tickets)
+        {
+            _ticketss.ReplaceOne(tickets => tickets.Id == id, tickets);
+        }
+
         public void Delete(string id)
         {
             _ticketss.DeleteOne(ticket => ticket.Id == id);

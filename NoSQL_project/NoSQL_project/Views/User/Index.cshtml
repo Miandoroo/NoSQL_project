@@ -47,6 +47,13 @@
                        class="btn btn-sm btn-primary">
                         <i class="bi bi-ticket-perforated"></i> Make a new ticket
                     </a>
+                    <a asp-controller="User"
+                       asp-action="Update"
+                       asp-route-id="@users.Id"
+                       class="btn btn-sm btn-primary">
+                        <i class="bi bi-ticket-perforated"></i> Editing existing user
+                    </a>
+
                     <form asp-action="Delete" asp-route-id="@users.Id" method="post" style="display: inline;">
                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this user?')">
                             <i class="bi bi-trash"></i> Delete

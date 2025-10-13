@@ -30,6 +30,12 @@
                     <a asp-action="Details" asp-route-id="@tickets.Id" class="btn btn-sm btn-info">
                         <i class="bi bi-eye"></i> Details
                     </a>
+                    <a asp-controller="Ticket"
+                       asp-action="Update"
+                       asp-route-id="@tickets.Id"
+                       class="btn btn-sm btn-primary">
+                        <i class="bi bi-ticket-perforated"></i> Editing existing ticket
+                    </a>
                     <form asp-action="Delete" asp-route-id="@tickets.Id" method="post" style="display: inline;">
                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this ticket?')">
                             <i class="bi bi-trash"></i> Delete

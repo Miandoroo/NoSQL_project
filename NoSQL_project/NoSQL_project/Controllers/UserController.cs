@@ -37,6 +37,7 @@ namespace NoSQL_project.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
         public IActionResult Details(string id)
         {
             var user = _repo.GetById(id);
@@ -45,6 +46,27 @@ namespace NoSQL_project.Controllers
                 return NotFound();
             }
             return View(user);
+        }
+
+        [HttpGet]
+        public IActionResult Update(string id)
+        {
+            Users user = _repo.GetById(id);
+            return View(user);
+        }
+
+        [HttpPost]
+        public IActionResult Update(string id, Users user)
+        {
+
+
+            if (!ModelState.IsValid)
+            {
+                return View(user);
+            }
+            _repo.Update(id, user);
+            TempData["Success"] = "Successfully edited user";
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpPost]

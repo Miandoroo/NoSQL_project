@@ -88,3 +88,43 @@ C:\Users\noahv\source\repos\NoSQL_project1\NoSQL_project\NoSQL_project\obj\Debug
 C:\Users\noahv\source\repos\NoSQL_project1\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.genruntimeconfig.cache
 C:\Users\noahv\source\repos\NoSQL_project1\NoSQL_project\NoSQL_project\obj\Debug\net8.0\ref\NoSQL_project.dll
 C:\Users\noahv\Source\Repos\NoSQL_project1\NoSQL_project\NoSQL_project\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.csproj.AssemblyReference.cache
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.AssemblyInfoInputs.cache
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.AssemblyInfo.cs
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.csproj.CoreCompileInputs.cache
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.RazorAssemblyInfo.cache
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.RazorAssemblyInfo.cs
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.sourcelink.json
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.dll
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\refint\NoSQL_project.dll
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.pdb
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\appsettings.json
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\NoSQL_project.staticwebassets.runtime.json
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\NoSQL_project.staticwebassets.endpoints.json
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\NoSQL_project.exe
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\NoSQL_project.deps.json
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\NoSQL_project.runtimeconfig.json
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\NoSQL_project.dll
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\NoSQL_project.pdb
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\DnsClient.dll
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\DotNetEnv.dll
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\Snappier.dll
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\Sprache.dll
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\scopedcss\bundle\NoSQL_project.styles.css
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\scopedcss\projectbundle\NoSQL_project.bundle.scp.css
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_pr.827C757B.Up2Date
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.genruntimeconfig.cache
+C:\Users\kuba2\Downloads\Nieuwe map (4)\NoSQL_project\NoSQL_project\obj\Debug\net8.0\ref\NoSQL_project.dll
