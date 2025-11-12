@@ -1,47 +1,14 @@
-﻿@model List<Tickets>
-
-<h1>Tickets</h1>
-
-<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-    <thead style="background-color: #f2f2f2;">
-        <tr>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Incident Subject</th>
-            <th>Incident Type</th>
-            <th>DeadLine</th>
-            <th>Priority</th>
-            <th>Description</th>
-            <th style="width: 200px;">Actions</th>
-        </tr>
-    </thead>
+﻿@model List<MongoDB.Bson.BsonDocument>
+<h2>Tickets by Status</h2>
+<table class="table">
+    <thead><tr><th>Status</th><th>Count</th><th>%</th></tr></thead>
     <tbody>
-        @foreach (Tickets tickets in Model)
+        @foreach (var d in Model)
         {
             <tr>
-                <td>@tickets.Date</td>
-                <td>@tickets.Status</td>
-                <td>@tickets.IncidentSubject</td>
-                <td>@tickets.IncidentType</td>
-                <td>@tickets.Deadline</td>
-                <td>@tickets.Priority</td>
-                <td>@tickets.Description</td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@tickets.Id" class="btn btn-sm btn-info">
-                        <i class="bi bi-eye"></i> Details
-                    </a>
-                    <a asp-controller="Ticket"
-                       asp-action="Update"
-                       asp-route-id="@tickets.Id"
-                       class="btn btn-sm btn-primary">
-                        <i class="bi bi-ticket-perforated"></i> Editing existing ticket
-                    </a>
-                    <form asp-action="Delete" asp-route-id="@tickets.Id" method="post" style="display: inline;">
-                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this ticket?')">
-                            <i class="bi bi-trash"></i> Delete
-                        </button>
-                    </form>
-                </td>
+                <td>@d.GetValue("status", MongoDB.Bson.BsonNull.Value)</td>
+                <td>@d.GetValue("count", MongoDB.Bson.BsonNull.Value)</td>
+                <td>@d.GetValue("percentage", MongoDB.Bson.BsonNull.Value)</td>
             </tr>
         }
     </tbody>

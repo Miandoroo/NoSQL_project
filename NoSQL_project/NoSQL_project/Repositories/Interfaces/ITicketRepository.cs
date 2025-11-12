@@ -1,16 +1,13 @@
-﻿using NoSQL_project.Models;
+﻿using MongoDB.Bson;
+using NoSQL_project.Models;
 
 namespace NoSQL_project.Repositories.Interfaces
 {
     public interface ITicketRepository
     {
-        List<Tickets> GetAll();
-        void Add(Tickets tickets);
-        Tickets? GetById(string id);
-        void Update(string id, Tickets tickets);
-        void Delete(string id);
-        List<Tickets> GetByUserId(string userId);
-        List<Tickets> GetByStatus(int status);
-        List<Tickets> GetByPriority(string priority);
+        Task<List<BsonDocument>> AggByStatusAsync(CancellationToken ct = default);
+        Task<List<BsonDocument>> AggByIncidentTypeAsync(CancellationToken ct = default);
+        Task<List<BsonDocument>> AggByUserLocationAsync(CancellationToken ct = default);
+        Task<List<BsonDocument>> AggDailyCreatedAsync(int lastNDays = 14, CancellationToken ct = default);
     }
 }
