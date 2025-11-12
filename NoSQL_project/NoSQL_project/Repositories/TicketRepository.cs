@@ -37,7 +37,6 @@ namespace NoSQL_project.Repositories
 
         public Task UpdateAsync(string id, Tickets tickets, CancellationToken ct = default)
         {
-            // Asegura que el Id del documento coincide con la ruta
             tickets.Id = id;
             return _tickets.ReplaceOneAsync(t => t.Id == id, tickets, cancellationToken: ct);
         }
@@ -84,11 +83,11 @@ namespace NoSQL_project.Repositories
 
             var pipeline = new[]
             {
-        new BsonDocument("$match", new BsonDocument{
-            { "userId", uid },
-            { "date", new BsonDocument("$gte", from) }
-        }),
-        new BsonDocument("$sort", new BsonDocument("date", -1))
+                new BsonDocument("$match", new BsonDocument{
+                { "userId", uid },
+                { "date", new BsonDocument("$gte", from) }
+                }),
+            new BsonDocument("$sort", new BsonDocument("date", -1))
             };
 
             return await _tickets.Aggregate<Tickets>(pipeline).ToListAsync(ct);

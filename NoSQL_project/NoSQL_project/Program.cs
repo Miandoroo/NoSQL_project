@@ -47,9 +47,10 @@ namespace NoSQL_project
                     options.ExpireTimeSpan = TimeSpan.FromHours(8);
                 });
 
-            builder.Services.AddAuthorization(options =>
+            builder.Services.AddAuthorization(o =>
             {
-                options.AddPolicy("ServiceDeskOnly", p => p.RequireRole("ServiceDesk"));
+                o.AddPolicy("ServiceDeskOnly", p => p.RequireRole("ServiceDesk", "Admin"));
+                o.AddPolicy("AdminOnly", p => p.RequireRole("Admin"));
             });
 
             // ---------- MVC ----------
@@ -77,7 +78,7 @@ namespace NoSQL_project
             app.UseStaticFiles();
             app.UseRouting();
 
-            // ⚠️ Orden correcto: primero autenticación, luego autorización
+            // First autentication,and after autorization
             app.UseAuthentication();
             app.UseAuthorization();
 

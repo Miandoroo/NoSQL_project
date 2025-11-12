@@ -3,6 +3,7 @@
     var postAction = User.IsInRole("ServiceDesk") ? "Create" : "CreateMine";
     var priorities = new[] { "Low", "Normal", "High", "Critical" };
     var incidentTypes = new[] { "request", "incident", "problem", "change" };
+    var isSd = User.IsInRole("ServiceDesk");
 }
 
 @if (TempData["Error"] is string err)
@@ -14,6 +15,8 @@
 <form asp-controller="Ticket" asp-action="@postAction" method="post">
     @Html.AntiForgeryToken()
 
+    <div asp-validation-summary="ModelOnly" class="text-danger mb-2"></div>
+
     <div class="mb-3">
         <label asp-for="IncidentSubject" class="form-label"></label>
         <input asp-for="IncidentSubject" class="form-control" />
@@ -23,10 +26,10 @@
     <div class="mb-3">
         <label asp-for="IncidentType" class="form-label"></label>
         <select asp-for="IncidentType" class="form-select">
-            @foreach (var it in incidentTypes)
-            {
-                <option value="@it">@it</option>
-            }
+            <option>request</option>
+            <option>incident</option>
+            <option>problem</option>
+            <option>change</option>
         </select>
         <span asp-validation-for="IncidentType" class="text-danger"></span>
     </div>
@@ -34,10 +37,10 @@
     <div class="mb-3">
         <label asp-for="Priority" class="form-label"></label>
         <select asp-for="Priority" class="form-select">
-            @foreach (var p in priorities)
-            {
-                <option value="@p">@p</option>
-            }
+            <option>Low</option>
+            <option selected>Normal</option>
+            <option>High</option>
+            <option>Critical</option>
         </select>
         <span asp-validation-for="Priority" class="text-danger"></span>
     </div>
@@ -71,8 +74,8 @@
         <span asp-validation-for="Description" class="text-danger"></span>
     </div>
 
-    <button class="btn btn-primary">Save</button>
-    <a asp-controller="Ticket" asp-action="Index" class="btn btn-secondary">Cancel</a>
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-controller="Ticket" asp-action="@(isSd ? "Index" : "My")" class="btn btn-secondary">Cancel</a>
 </form>
 
 @section Scripts {
