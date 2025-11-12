@@ -1,41 +1,150 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NoSQL_project.Models;
-using NoSQL_project.Repositories.Interfaces;
+using NoSQL_project.Services.Interfaces;
+using System.Security.Claims;
 
 namespace NoSQL_project.Controllers
 {
+    [Authorize]
     public class TicketController : Controller
     {
-        private readonly ITicketRepository _repo;
-        public TicketController(ITicketRepository repo) => _repo = repo;
+        private readonly ITicketService _ticketService;
+        private readonly IUserService _userService;
 
-       public IActionResult Index()
-       {
-         List<Tickets> tickets = _repo.GetAll();
-         return View(tickets);    
-       }
+        public TicketController(ITicketService ticketService, IUserService userService)
+        {
+            _ticketService = ticketService;
+            _userService = userService;
+        }
+
+        public IActionResult Index()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            List<Ticket> tickets;
+            if (User.IsInRole("ServiceDeskEmployee"))
+            {
+                tickets = _ticketService.GetAll();
+            }
+            else
+            {
+                tickets = _ticketService.GetByUserId(userId);
+            }
+
+            return View(tickets);
+        }
 
         [HttpGet]
-        public IActionResult Create(string userId)
+        public IActionResult Create()
         {
-            ViewBag.UserId = userId;
+            ViewBag.Users = _userService.GetAll();
+            ViewBag.IsServiceDesk = User.IsInRole("ServiceDeskEmployee");
+            ViewBag.CurrentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(Tickets ticket, string userId)
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Ticket ticket)
         {
-            ticket.Id = ObjectId.GenerateNewId().ToString();
-            ticket.UserId = userId;
+            if (ModelState.IsValid)
+            {
+                if (!User.IsInRole("ServiceDeskEmployee"))
+                {
+                    ticket.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                }
+                else if (string.IsNullOrEmpty(ticket.UserId))
+                {
+                    ModelState.AddModelError("UserId", "Please select a user");
+                    ViewBag.Users = _userService.GetAll();
+                    ViewBag.IsServiceDesk = User.IsInRole("ServiceDeskEmployee");
+                    ViewBag.CurrentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                    return View(ticket);
+                }
 
-            _repo.Add(ticket);
-            return RedirectToAction("Index", "User");
+                _ticketService.Create(ticket);
+                TempData["Success"] = "Ticket successfully created!";
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewBag.Users = _userService.GetAll();
+            ViewBag.IsServiceDesk = User.IsInRole("ServiceDeskEmployee");
+            ViewBag.CurrentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return View(ticket);
         }
 
         public IActionResult Details(string id)
         {
-            var ticket = _repo.GetById(id);
+            var ticket = _ticketService.GetById(id);
+            if (ticket == null)
+            {
+                return NotFound();
+            }
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!User.IsInRole("ServiceDeskEmployee") && ticket.UserId != userId)
+                return Forbid();
+
+            var user = _userService.GetById(ticket.UserId);
+            ViewBag.User = user;
+            return View(ticket);
+        }
+
+        [HttpGet]
+        public IActionResult Update(string id)
+        {
+            var ticket = _ticketService.GetById(id);
+            if (ticket == null)
+                return NotFound();
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!User.IsInRole("ServiceDeskEmployee") && ticket.UserId != userId)
+                return Forbid();
+
+            ViewBag.Users = _userService.GetAll();
+            ViewBag.IsServiceDesk = User.IsInRole("ServiceDeskEmployee");
+            return View(ticket);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(string id, Ticket ticket, string UserId)
+        {
+            var existingTicket = _ticketService.GetById(id);
+            if (existingTicket == null)
+                return NotFound();
+
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!User.IsInRole("ServiceDeskEmployee") && existingTicket.UserId != userId)
+                return Forbid();
+
+            if (ModelState.IsValid)
+            {
+                ticket.Id = id;
+                if (User.IsInRole("ServiceDeskEmployee") && !string.IsNullOrEmpty(UserId))
+                {
+                    ticket.UserId = UserId;
+                }
+                else
+                {
+                    ticket.UserId = existingTicket.UserId;
+                }
+                _ticketService.Update(id, ticket);
+                TempData["Success"] = "Successfully edited ticket";
+                return RedirectToAction(nameof(Index));
+            }
+
+            ViewBag.Users = _userService.GetAll();
+            ViewBag.IsServiceDesk = User.IsInRole("ServiceDeskEmployee");
+            return View(ticket);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "ServiceDeskEmployee")]
+        public IActionResult Delete(string id)
+        {
+            var ticket = _ticketService.GetById(id);
             if (ticket == null)
             {
                 return NotFound();
@@ -43,60 +152,21 @@ namespace NoSQL_project.Controllers
             return View(ticket);
         }
 
-        [HttpGet]
-        public IActionResult Update(string id)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        [Authorize(Roles = "ServiceDeskEmployee")]
+        public IActionResult DeleteConfirmed(string id)
         {
-            Tickets tickets = _repo.GetById(id);
-            return View(tickets);
-        }
-
-        [HttpPost]
-        public IActionResult Update(string id, Tickets tickets)
-        {
-
-
-            if (!ModelState.IsValid)
+            try
             {
-                return View(tickets);
+                _ticketService.Delete(id);
+                TempData["Success"] = "Ticket successfully deleted!";
+                return RedirectToAction(nameof(Index));
             }
-            _repo.Update(id, tickets);
-            TempData["Success"] = "Successfully edited ticket";
-            return RedirectToAction(nameof(Index));
-        }
-
-        [HttpPost]
-        public IActionResult Delete(string id)
-        {
-            var ticket = _repo.GetById(id);
-            if (ticket == null)
+            catch (ArgumentException)
             {
                 return NotFound();
             }
-
-            _repo.Delete(id);
-            TempData["Success"] = "Ticket successfully deleted!";
-            return RedirectToAction(nameof(Index));
-        }
-
-        public IActionResult ByUser(string userId)
-        {
-            var tickets = _repo.GetByUserId(userId);
-            ViewBag.UserId = userId;
-            return View("Index", tickets);
-        }
-
-        public IActionResult ByStatus(int status)
-        {
-            var tickets = _repo.GetByStatus(status);
-            ViewBag.Status = status;
-            return View("Index", tickets);
-        }
-
-        public IActionResult ByPriority(string priority)
-        {
-            var tickets = _repo.GetByPriority(priority);
-            ViewBag.Priority = priority;
-            return View("Index", tickets);
         }
     }
 }

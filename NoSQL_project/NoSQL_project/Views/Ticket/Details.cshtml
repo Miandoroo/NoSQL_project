@@ -1,4 +1,4 @@
-@model Tickets
+@model Ticket
 
 @{
     ViewData["Title"] = "Ticket Details";
@@ -16,7 +16,7 @@
             <dd class="col-sm-9">@Model.Id</dd>
 
             <dt class="col-sm-3">Date:</dt>
-            <dd class="col-sm-9">@Model.Date</dd>
+            <dd class="col-sm-9">@Model.Date.ToString("yyyy-MM-dd HH:mm")</dd>
 
             <dt class="col-sm-3">Status:</dt>
             <dd class="col-sm-9">@Model.Status</dd>
@@ -25,7 +25,7 @@
             <dd class="col-sm-9">@Model.IncidentType</dd>
 
             <dt class="col-sm-3">Deadline:</dt>
-            <dd class="col-sm-9">@Model.Deadline</dd>
+            <dd class="col-sm-9">@(Model.Deadline?.ToString("yyyy-MM-dd HH:mm") ?? "N/A")</dd>
 
             <dt class="col-sm-3">Priority:</dt>
             <dd class="col-sm-9">@Model.Priority</dd>

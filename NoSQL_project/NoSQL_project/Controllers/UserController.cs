@@ -1,46 +1,184 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NoSQL_project.Models;
-using NoSQL_project.Repositories.Interfaces;
-
+using NoSQL_project.Models.ViewModels;
+using NoSQL_project.Services.Interfaces;
+using System.Security.Claims;
 
 namespace NoSQL_project.Controllers
 {
-    public class UserController : Controller 
+    public class UserController : Controller
     {
-        private readonly IUserRepository _repo;
-        public UserController(IUserRepository repo) => _repo = repo;
+        private readonly IUserService _userService;
 
-        public IActionResult Index()
+        public UserController(IUserService userService)
         {
-               List<Users> users = _repo.GetAll();
-               return View(users);
+            _userService = userService;
         }
 
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Login()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var user = _userService.AuthenticateUser(model.Username, model.Password);
+
+            if (user == null)
+            {
+                ModelState.AddModelError("", "Invalid username or password");
+                return View(model);
+            }
+
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role)
+            };
+
+            var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+            var authProperties = new AuthenticationProperties
+            {
+                IsPersistent = model.RememberMe
+            };
+
+            await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity), authProperties);
+
+            return RedirectToAction("Index", "Dashboard");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Logout()
+        {
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            return RedirectToAction("Login", "User");
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpGet]
+        public IActionResult Register()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Index", "Dashboard");
+            }
+            return View();
+        }
+
+        [AllowAnonymous]
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Register(RegisterViewModel model)
+        {
+            if (!ModelState.IsValid)
+                return View(model);
+
+            var existingUserByUsername = _userService.GetByUsername(model.Username);
+            if (existingUserByUsername != null)
+            {
+                ModelState.AddModelError("Username", "Username is already taken");
+                return View(model);
+            }
+
+            var existingUserByEmail = _userService.GetByEmail(model.Email);
+            if (existingUserByEmail != null)
+            {
+                ModelState.AddModelError("Email", "Email is already registered");
+                return View(model);
+            }
+
+            var newUser = new User
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                Username = model.Username,
+                PhoneNumber = model.PhoneNumber ?? "",
+                Location = model.Location ?? "",
+                Type = model.Type ?? "",
+                Role = "RegularEmployee"
+            };
+
+            try
+            {
+                _userService.Create(newUser, model.Password);
+                TempData["Success"] = "Account created successfully! You can now login.";
+                return RedirectToAction("Login", "User");
+            }
+            catch (ArgumentException ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return View(model);
+            }
+        }
+
+        [Authorize(Roles = "ServiceDeskEmployee")]
+        public IActionResult Index()
+        {
+            List<User> users = _userService.GetAll();
+            return View(users);
+        }
+
+        [Authorize(Roles = "ServiceDeskEmployee")]
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
+        [Authorize(Roles = "ServiceDeskEmployee")]
         [HttpPost]
-        public IActionResult Create(Users user)
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(User user, string password)
         {
-            ModelState.Remove(nameof(Users.Id));
-            if (!ModelState.IsValid) 
+            ModelState.Remove(nameof(NoSQL_project.Models.User.Id));
+            ModelState.Remove(nameof(NoSQL_project.Models.User.PasswordHash));
+            if (!ModelState.IsValid)
                 return View(user);
-            if (string.IsNullOrEmpty(user.Id))
-                user.Id = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
 
-
-            _repo.Add(user);
-            TempData["Success"] = "User successfully added!";
-            return RedirectToAction(nameof(Index));
+            try
+            {
+                _userService.Create(user, password);
+                TempData["Success"] = "User successfully added!";
+                return RedirectToAction(nameof(Index));
+            }
+            catch (ArgumentException ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return View(user);
+            }
         }
 
-
+        [Authorize(Roles = "ServiceDeskEmployee")]
         public IActionResult Details(string id)
         {
-            var user = _repo.GetById(id);
+            var user = _userService.GetById(id);
             if (user == null)
             {
                 return NotFound();
@@ -48,53 +186,69 @@ namespace NoSQL_project.Controllers
             return View(user);
         }
 
+        [Authorize(Roles = "ServiceDeskEmployee")]
         [HttpGet]
         public IActionResult Update(string id)
         {
-            Users user = _repo.GetById(id);
+            User user = _userService.GetById(id);
+            if (user == null)
+            {
+                return NotFound();
+            }
             return View(user);
         }
 
+        [Authorize(Roles = "ServiceDeskEmployee")]
         [HttpPost]
-        public IActionResult Update(string id, Users user)
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(string id, User user, string password)
         {
-
-
+            ModelState.Remove(nameof(NoSQL_project.Models.User.PasswordHash));
             if (!ModelState.IsValid)
             {
                 return View(user);
             }
-            _repo.Update(id, user);
-            TempData["Success"] = "Successfully edited user";
-            return RedirectToAction(nameof(Index));
+
+            try
+            {
+                _userService.Update(id, user, password);
+                TempData["Success"] = "Successfully edited user";
+                return RedirectToAction(nameof(Index));
+            }
+            catch (ArgumentException ex)
+            {
+                ModelState.AddModelError("", ex.Message);
+                return View(user);
+            }
         }
 
-        [HttpPost]
+        [Authorize(Roles = "ServiceDeskEmployee")]
+        [HttpGet]
         public IActionResult Delete(string id)
         {
-            var user = _repo.GetById(id);
+            var user = _userService.GetById(id);
             if (user == null)
             {
                 return NotFound();
             }
-
-            _repo.Delete(id);
-            TempData["Success"] = "User successfully deleted!";
-            return RedirectToAction(nameof(Index));
+            return View(user);
         }
 
-        public IActionResult ByType(string type)
+        [Authorize(Roles = "ServiceDeskEmployee")]
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(string id)
         {
-            var users = _repo.GetByType(type);
-            ViewBag.Type = type;
-            return View("Index", users);
-        }
-
-        public IActionResult ByLocation(string location)
-        {
-            var users = _repo.GetByLocation(location);
-            ViewBag.Location = location;
-            return View("Index", users);
+            try
+            {
+                _userService.Delete(id);
+                TempData["Success"] = "User successfully deleted!";
+                return RedirectToAction(nameof(Index));
+            }
+            catch (ArgumentException)
+            {
+                return NotFound();
+            }
         }
     }
 }

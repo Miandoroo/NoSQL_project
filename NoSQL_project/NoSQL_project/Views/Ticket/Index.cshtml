@@ -1,6 +1,10 @@
-﻿@model List<Tickets>
+﻿@model List<Ticket>
 
 <h1>Tickets</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New Ticket</a>
+</p>
 
 <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
     <thead style="background-color: #f2f2f2;">
@@ -16,31 +20,35 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (Tickets tickets in Model)
+        @foreach (Ticket ticket in Model)
         {
             <tr>
-                <td>@tickets.Date</td>
-                <td>@tickets.Status</td>
-                <td>@tickets.IncidentSubject</td>
-                <td>@tickets.IncidentType</td>
-                <td>@tickets.Deadline</td>
-                <td>@tickets.Priority</td>
-                <td>@tickets.Description</td>
+                <td>@ticket.Date.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@ticket.Status</td>
+                <td>@ticket.IncidentSubject</td>
+                <td>@ticket.IncidentType</td>
+                <td>@(ticket.Deadline?.ToString("yyyy-MM-dd HH:mm") ?? "N/A")</td>
+                <td>@ticket.Priority</td>
+                <td>@ticket.Description</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@tickets.Id" class="btn btn-sm btn-info">
+                    <a asp-action="Details" asp-route-id="@ticket.Id" class="btn btn-sm btn-info">
                         <i class="bi bi-eye"></i> Details
                     </a>
                     <a asp-controller="Ticket"
                        asp-action="Update"
-                       asp-route-id="@tickets.Id"
+                       asp-route-id="@ticket.Id"
                        class="btn btn-sm btn-primary">
                         <i class="bi bi-ticket-perforated"></i> Editing existing ticket
                     </a>
-                    <form asp-action="Delete" asp-route-id="@tickets.Id" method="post" style="display: inline;">
-                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this ticket?')">
+                    @if (User.IsInRole("ServiceDeskEmployee"))
+                    {
+                        <a asp-controller="Ticket"
+                           asp-action="Delete"
+                           asp-route-id="@ticket.Id"
+                           class="btn btn-sm btn-danger">
                             <i class="bi bi-trash"></i> Delete
-                        </button>
-                    </form>
+                        </a>
+                    }
                 </td>
             </tr>
         }

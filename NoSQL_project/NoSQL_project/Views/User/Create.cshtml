@@ -1,4 +1,4 @@
-﻿@model NoSQL_project.Models.Users
+﻿@model NoSQL_project.Models.User
 @{
     ViewData["Title"] = "Nieuwe gebruiker";
 }
@@ -56,6 +56,28 @@
             <option>franchisee</option>
         </select>
         <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Username" class="form-label"></label>
+        <input asp-for="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" name="password" id="password" class="form-control" required />
+        <span class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Role" class="form-label"></label>
+        <select asp-for="Role" class="form-select">
+            <option value="">-- Select Role --</option>
+            <option value="RegularEmployee">Regular Employee</option>
+            <option value="ServiceDeskEmployee">Service Desk Employee</option>
+        </select>
+        <span asp-validation-for="Role" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">Opslaan</button>

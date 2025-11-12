@@ -1,0 +1,107 @@
+@model NoSQL_project.Models.ViewModels.DashboardViewModel
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h1>Dashboard</h1>
+
+@if (Model.IsServiceDesk)
+{
+    <div class="alert alert-info">
+        <strong>Service Desk View:</strong> Showing statistics for all tickets across all users.
+    </div>
+}
+else
+{
+    <div class="alert alert-info">
+        <strong>Employee View:</strong> Showing statistics for your tickets only.
+    </div>
+}
+
+<div class="row mt-4">
+    <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3">
+            <div class="card-header">Total Tickets</div>
+            <div class="card-body">
+                <h4 class="card-title">@Model.TotalTickets</h4>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-warning mb-3">
+            <div class="card-header">Open Tickets</div>
+            <div class="card-body">
+                <h4 class="card-title">@Model.OpenTickets</h4>
+                <p class="card-text">@Model.PercentOpen.ToString("F2")%</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-success mb-3">
+            <div class="card-header">Resolved Tickets</div>
+            <div class="card-body">
+                <h4 class="card-title">@Model.ResolvedTickets</h4>
+                <p class="card-text">@Model.PercentResolved.ToString("F2")%</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card text-white bg-secondary mb-3">
+            <div class="card-header">Closed Tickets</div>
+            <div class="card-body">
+                <h4 class="card-title">@Model.ClosedTickets</h4>
+                <p class="card-text">@Model.PercentClosed.ToString("F2")%</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <h3>Recent Tickets</h3>
+        @if (Model.RecentTickets != null && Model.RecentTickets.Any())
+        {
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Subject</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Priority</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ticket in Model.RecentTickets)
+                    {
+                        <tr>
+                            <td>@ticket.Date.ToString("yyyy-MM-dd HH:mm")</td>
+                            <td>@ticket.IncidentSubject</td>
+                            <td>@ticket.IncidentType</td>
+                            <td>@ticket.Status</td>
+                            <td>@ticket.Priority</td>
+                            <td>
+                                <a asp-controller="Ticket" asp-action="Details" asp-route-id="@ticket.Id" class="btn btn-sm btn-info">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No tickets found.</p>
+        }
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <a asp-controller="Ticket" asp-action="Create" class="btn btn-primary">Create New Ticket</a>
+        <a asp-controller="Ticket" asp-action="Index" class="btn btn-secondary">View All Tickets</a>
+    </div>
+</div>
+
+

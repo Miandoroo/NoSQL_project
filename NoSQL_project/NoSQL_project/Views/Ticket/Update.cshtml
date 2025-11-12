@@ -1,4 +1,4 @@
-﻿@model NoSQL_project.Models.Tickets
+﻿@model NoSQL_project.Models.Ticket
 
 <h2>Edit Ticket</h2>
 
@@ -6,9 +6,24 @@
     @Html.AntiForgeryToken()
 
     <input type="hidden" asp-for="Id" />
-    <input type="hidden" asp-for="UserId" />
 
-    <input type="hidden" name="userId" value="@ViewBag.UserId" />
+    @if (ViewBag.IsServiceDesk == true)
+    {
+        <div class="mb-3">
+            <label for="UserId" class="form-label">Assign To User</label>
+            <select name="UserId" id="UserId" class="form-select">
+                <option value="">-- Select User --</option>
+                @foreach (var user in ViewBag.Users as List<NoSQL_project.Models.User>)
+                {
+                    <option value="@user.Id" selected="@(user.Id == Model.UserId)">@user.FirstName @user.LastName (@user.Email)</option>
+                }
+            </select>
+        </div>
+    }
+    else
+    {
+        <input type="hidden" name="UserId" value="@Model.UserId" />
+    }
 
     <div class="mb-3">
         <label asp-for="IncidentSubject" class="form-label">Subject</label>
@@ -32,12 +47,12 @@
 
     <div class="mb-3">
         <label asp-for="Date" class="form-label">Date</label>
-        <input asp-for="Date" class="form-control" />
+        <input asp-for="Date" class="form-control" type="datetime-local" value="@Model.Date.ToString("yyyy-MM-ddTHH:mm")" />
     </div>
 
     <div class="mb-3">
         <label asp-for="Deadline" class="form-label">Deadline</label>
-        <input asp-for="Deadline" class="form-control" />
+        <input asp-for="Deadline" class="form-control" type="datetime-local" value="@(Model.Deadline?.ToString("yyyy-MM-ddTHH:mm") ?? "")" />
     </div>
 
     <div class="mb-3">

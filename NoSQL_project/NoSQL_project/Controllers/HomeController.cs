@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
-using NoSQL_project.Models;
+using NoSQL_project.Models.ViewModels;
 
 namespace NoSQL_project.Controllers;
 
@@ -15,11 +15,10 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
+        if (User.Identity.IsAuthenticated)
+        {
+            return RedirectToAction("Index", "Dashboard");
+        }
         return View();
     }
 

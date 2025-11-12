@@ -1,7 +1,8 @@
 using MongoDB.Driver;
 using NoSQL_project.Repositories;
 using NoSQL_project.Repositories.Interfaces;
-
+using NoSQL_project.Services;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace NoSQL_project
 {
@@ -9,54 +10,61 @@ namespace NoSQL_project
     {
         public static void Main(string[] args)
         {
-            // Load .env before building configuration so env vars are available
             DotNetEnv.Env.TraversePath().Load();
 
             var builder = WebApplication.CreateBuilder(args);
 
-            // 1) Register MongoClient as a SINGLETON (one shared instance for the whole app)
-            // WHY: MongoClient is thread-safe and internally manages a connection pool.
-            // Reusing one instance is fast and efficient. Creating many clients would waste resources.
             builder.Services.AddSingleton<IMongoClient>(sp =>
             {
-                // Read the connection string from configuration (env var via .env)
                 var conn = builder.Configuration["Mongo:ConnectionString"];
                 if (string.IsNullOrWhiteSpace(conn))
                     throw new InvalidOperationException("Mongo:ConnectionString is not configured. Did you set it in .env?");
 
-                // Optional: tweak settings (timeouts, etc.)
                 var settings = MongoClientSettings.FromConnectionString(conn);
-                // settings.ServerSelectionTimeout = TimeSpan.FromSeconds(5);
 
                 return new MongoClient(settings);
             });
 
-            // 2) Register IMongoDatabase as SCOPED (new per HTTP request)
-            // WHY: Fits the ASP.NET request lifecycle and keeps each request cleanly separated.
             builder.Services.AddScoped(sp =>
             {
                 var client = sp.GetRequiredService<IMongoClient>();
 
-                var dbName = builder.Configuration["Mongo:Database"]; // from appsettings.json
+                var dbName = builder.Configuration["Mongo:Database"];
                 if (string.IsNullOrWhiteSpace(dbName))
                     throw new InvalidOperationException("Mongo:Database is not configured in appsettings.json.");
 
                 return client.GetDatabase(dbName);
             });
-            // Add services to the container.
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+            builder.Services.AddScoped<NoSQL_project.Services.Interfaces.IUserService, UserService>();
+            builder.Services.AddScoped<NoSQL_project.Services.Interfaces.ITicketService, TicketService>();
+
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/User/Login";
+                    options.LogoutPath = "/User/Logout";
+                    options.AccessDeniedPath = "/User/AccessDenied";
+                    options.ExpireTimeSpan = TimeSpan.FromHours(8);
+                    options.SlidingExpiration = true;
+                });
+
+            builder.Services.AddAuthorization();
 
             var app = builder.Build();
 
+            using (var scope = app.Services.CreateScope())
+            {
+                var userService = scope.ServiceProvider.GetRequiredService<NoSQL_project.Services.Interfaces.IUserService>();
+                userService.Initialize();
+            }
 
-            // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
@@ -65,6 +73,7 @@ namespace NoSQL_project
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
@@ -73,7 +82,5 @@ namespace NoSQL_project
 
             app.Run();
         }
-
     }
 }
-

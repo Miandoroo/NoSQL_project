@@ -3,6 +3,20 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to Ticketing System</h1>
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <p class="lead">Please login or create an account to access the system.</p>
+        <div class="mt-4">
+            <a asp-controller="User" asp-action="Login" class="btn btn-primary btn-lg me-2">Login</a>
+            <a asp-controller="User" asp-action="Register" class="btn btn-outline-primary btn-lg">Register</a>
+        </div>
+    }
+    else
+    {
+        <p class="lead">Welcome back, @User.Identity.Name!</p>
+        <div class="mt-4">
+            <a asp-controller="Dashboard" asp-action="Index" class="btn btn-primary btn-lg">Go to Dashboard</a>
+        </div>
+    }
 </div>
