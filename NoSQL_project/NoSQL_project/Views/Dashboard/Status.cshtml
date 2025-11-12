@@ -1,0 +1,30 @@
+﻿@model NoSQL_project.Models.ViewModels.StatusBreakdownVM
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2 class="mb-3">@Model.Title</h2>
+
+@if (Model.Total == 0)
+{
+    <div class="alert alert-info">No tickets found.</div>
+}
+else
+{
+    <table class="table table-striped w-auto">
+        <thead>
+            <tr>
+                <th>Status</th>
+                <th>Count</th>
+                <th>%</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Open (0)</td><td>@Model.Open</td><td>@Model.PctOpen.ToString("0.0")%</td></tr>
+            <tr><td>In Progress (1)</td><td>@Model.InProgress</td><td>@Model.PctInProgress.ToString("0.0")%</td></tr>
+            <tr><td>Resolved (2)</td><td>@Model.Resolved</td><td>@Model.PctResolved.ToString("0.0")%</td></tr>
+            <tr><td>Closed (3)</td><td>@Model.Closed</td><td>@Model.PctClosed.ToString("0.0")%</td></tr>
+            <tr class="table-secondary"><td>Total</td><td>@Model.Total</td><td>100%</td></tr>
+        </tbody>
+    </table>
+}

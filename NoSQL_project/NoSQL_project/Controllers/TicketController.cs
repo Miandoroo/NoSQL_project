@@ -1,102 +1,130 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using MongoDB.Bson;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NoSQL_project.Models;
-using NoSQL_project.Repositories.Interfaces;
+using NoSQL_project.Services.Interfaces;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
-namespace NoSQL_project.Controllers
+[Authorize]
+// Acepta /Ticket y /Tickets como base
+[Route("Ticket")]
+[Route("Tickets")]
+public class TicketController : Controller
 {
-    public class TicketController : Controller
+    private readonly ITicketService _svc;
+    public TicketController(ITicketService svc) => _svc = svc;
+
+    // --- Service Desk (todos) ---
+
+    // GET /Ticket    y /Tickets
+    [Authorize(Policy = "ServiceDeskOnly")]
+    [HttpGet("")]
+    public async Task<IActionResult> Index(int days = 7)
     {
-        private readonly ITicketRepository _repo;
-        public TicketController(ITicketRepository repo) => _repo = repo;
-
-       public IActionResult Index()
-       {
-         List<Tickets> tickets = _repo.GetAll();
-         return View(tickets);    
-       }
-
-        [HttpGet]
-        public IActionResult Create(string userId)
-        {
-            ViewBag.UserId = userId;
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult Create(Tickets ticket, string userId)
-        {
-            ticket.Id = ObjectId.GenerateNewId().ToString();
-            ticket.UserId = userId;
-
-            _repo.Add(ticket);
-            return RedirectToAction("Index", "User");
-        }
-
-        public IActionResult Details(string id)
-        {
-            var ticket = _repo.GetById(id);
-            if (ticket == null)
-            {
-                return NotFound();
-            }
-            return View(ticket);
-        }
-
-        [HttpGet]
-        public IActionResult Update(string id)
-        {
-            Tickets tickets = _repo.GetById(id);
-            return View(tickets);
-        }
-
-        [HttpPost]
-        public IActionResult Update(string id, Tickets tickets)
-        {
-
-
-            if (!ModelState.IsValid)
-            {
-                return View(tickets);
-            }
-            _repo.Update(id, tickets);
-            TempData["Success"] = "Successfully edited ticket";
-            return RedirectToAction(nameof(Index));
-        }
-
-        [HttpPost]
-        public IActionResult Delete(string id)
-        {
-            var ticket = _repo.GetById(id);
-            if (ticket == null)
-            {
-                return NotFound();
-            }
-
-            _repo.Delete(id);
-            TempData["Success"] = "Ticket successfully deleted!";
-            return RedirectToAction(nameof(Index));
-        }
-
-        public IActionResult ByUser(string userId)
-        {
-            var tickets = _repo.GetByUserId(userId);
-            ViewBag.UserId = userId;
-            return View("Index", tickets);
-        }
-
-        public IActionResult ByStatus(int status)
-        {
-            var tickets = _repo.GetByStatus(status);
-            ViewBag.Status = status;
-            return View("Index", tickets);
-        }
-
-        public IActionResult ByPriority(string priority)
-        {
-            var tickets = _repo.GetByPriority(priority);
-            ViewBag.Priority = priority;
-            return View("Index", tickets);
-        }
+        var list = await _svc.GetLastDaysAggAsync(days);
+        ViewBag.Days = days;
+        return View(list);
     }
+
+    // GET /Ticket/Details/{id}
+    [HttpGet("Details/{id}")]
+    [Authorize(Policy = "ServiceDeskOnly")]
+    public async Task<IActionResult> Details(string id) =>
+        View(await _svc.GetByIdAsync(id));
+
+    // GET /Ticket/Create
+    [HttpGet("Create")]
+    [Authorize(Policy = "ServiceDeskOnly")]
+    public IActionResult Create() => View();
+
+    // POST /Ticket/Create
+    [HttpPost("Create")]
+    [Authorize(Policy = "ServiceDeskOnly")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Create([FromForm] Tickets t)
+    {
+        ModelState.Remove(nameof(Tickets.Id));
+        ModelState.Remove(nameof(Tickets.UserId)); // quítalo si aún no seleccionas usuario
+        
+        if (!ModelState.IsValid) return View(t);
+
+        // Si no seleccionas usuario en el form, usa el propio SD o algún valor por defecto
+        t.UserId = t.UserId ?? User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+        if (t.Date == default) t.Date = DateTime.UtcNow.Date;
+        if (t.Deadline == default) t.Deadline = t.Date.AddDays(7);
+        TempData["Success"] = "Ticket created.";
+        TempData["Error"] = "An error occurred while saving the ticket.";
+        await _svc.CreateAsync(t);
+        return RedirectToAction(nameof(Index));
+    }
+
+    // GET /Ticket/Edit/{id}
+    [HttpGet("Edit/{id}")]
+    [Authorize(Policy = "ServiceDeskOnly")]
+    public async Task<IActionResult> Edit(string id) => View(await _svc.GetByIdAsync(id));
+
+    // POST /Ticket/Edit/{id}
+    [HttpPost("Edit/{id}")]
+    [Authorize(Policy = "ServiceDeskOnly")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> Edit(string id, Tickets t)
+    {
+        if (!ModelState.IsValid) return View(t);
+        await _svc.UpdateAsync(id, t);
+        return RedirectToAction(nameof(Index));
+    }
+
+    // GET /Ticket/Delete/{id}
+    [HttpGet("Delete/{id}")]
+    [Authorize(Policy = "ServiceDeskOnly")]
+    public async Task<IActionResult> Delete(string id) => View(await _svc.GetByIdAsync(id));
+
+    // POST /Ticket/Delete/{id}
+    [HttpPost("Delete/{id}")]
+    [ActionName("Delete")]
+    [Authorize(Policy = "ServiceDeskOnly")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> DeleteConfirmed(string id)
+    {
+        await _svc.DeleteAsync(id);
+        return RedirectToAction(nameof(Index));
+    }
+
+    // --- Empleado regular (sus tickets) ---
+
+    // GET /Ticket/My   y /Tickets/My
+    [HttpGet("My")]
+    public async Task<IActionResult> My(int days = 7)
+    {
+        var uid = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        var list = await _svc.GetByUserLastDaysAggAsync(uid, days);
+        ViewBag.Days = days;
+        return View("Index", list);
+    }
+
+    // GET /Ticket/CreateMine
+    [HttpGet("CreateMine")]
+    public IActionResult CreateMine() => View("Create");
+
+    // POST /Ticket/CreateMine
+    [HttpPost("CreateMine")]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> CreateMine([FromForm] Tickets t)
+    {
+        // Estos los pones tú, así que quítalos de la validación
+        ModelState.Remove(nameof(Tickets.Id));
+        ModelState.Remove(nameof(Tickets.UserId));
+
+        if (!ModelState.IsValid) return View("Create", t);
+
+        t.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier)!;
+
+        if (t.Date == default) t.Date = DateTime.UtcNow.Date;
+        if (t.Deadline == default) t.Deadline = t.Date.AddDays(7);
+
+        await _svc.CreateAsync(t);
+        return RedirectToAction(nameof(My));
+    }
+
 }

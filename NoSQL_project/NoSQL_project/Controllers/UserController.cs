@@ -1,98 +1,114 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NoSQL_project.Models;
 using NoSQL_project.Repositories.Interfaces;
-
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace NoSQL_project.Controllers
 {
-    public class UserController : Controller 
+    [Authorize(Policy = "ServiceDeskOnly")]
+    public class UsersController : Controller
     {
         private readonly IUserRepository _repo;
-        public UserController(IUserRepository repo) => _repo = repo;
+        public UsersController(IUserRepository repo) => _repo = repo;
 
-        public IActionResult Index()
-        {
-               List<Users> users = _repo.GetAll();
-               return View(users);
-        }
-
+        // LIST
         [HttpGet]
-        public IActionResult Create()
+        public async Task<IActionResult> Index(CancellationToken ct)
         {
-            return View();
+            var users = await _repo.GetAllAsync(ct);
+            return View(users); // Views/Users/Index.cshtml
         }
 
-        [HttpPost]
-        public IActionResult Create(Users user)
+        // DETAILS
+        [HttpGet]
+        public async Task<IActionResult> Details(string id, CancellationToken ct)
         {
-            ModelState.Remove(nameof(Users.Id));
-            if (!ModelState.IsValid) 
-                return View(user);
-            if (string.IsNullOrEmpty(user.Id))
+            var user = await _repo.GetByIdAsync(id, ct);
+            if (user == null) return NotFound();
+            return View(user); // Views/Users/Details.cshtml
+        }
+
+        // CREATE (GET)
+        [HttpGet]
+        public IActionResult Create() => View(); // Views/Users/Create.cshtml
+
+        // CREATE (POST)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Users user, CancellationToken ct)
+        {
+            // Genera Id si viene vacío (string con ObjectId)
+            if (string.IsNullOrWhiteSpace(user.Id))
                 user.Id = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
 
+            if (!ModelState.IsValid) return View(user);
 
-            _repo.Add(user);
+            await _repo.AddAsync(user, ct);
             TempData["Success"] = "User successfully added!";
             return RedirectToAction(nameof(Index));
         }
 
-
-        public IActionResult Details(string id)
-        {
-            var user = _repo.GetById(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-            return View(user);
-        }
-
+        // EDIT (GET)
         [HttpGet]
-        public IActionResult Update(string id)
+        public async Task<IActionResult> Edit(string id, CancellationToken ct)
         {
-            Users user = _repo.GetById(id);
-            return View(user);
+            var user = await _repo.GetByIdAsync(id, ct);
+            if (user == null) return NotFound();
+            return View(user); // Views/Users/Edit.cshtml
         }
 
+        // EDIT (POST)
         [HttpPost]
-        public IActionResult Update(string id, Users user)
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(string id, Users user, CancellationToken ct)
         {
+            if (!ModelState.IsValid) return View(user);
 
+            // Garantiza que el Id de ruta prevalece
+            user.Id = id;
 
-            if (!ModelState.IsValid)
-            {
-                return View(user);
-            }
-            _repo.Update(id, user);
+            await _repo.UpdateAsync(id, user, ct);
             TempData["Success"] = "Successfully edited user";
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpPost]
-        public IActionResult Delete(string id)
+        // DELETE (GET) - confirmación
+        [HttpGet]
+        public async Task<IActionResult> Delete(string id, CancellationToken ct)
         {
-            var user = _repo.GetById(id);
-            if (user == null)
-            {
-                return NotFound();
-            }
+            var user = await _repo.GetByIdAsync(id, ct);
+            if (user == null) return NotFound();
+            return View(user); // Views/Users/Delete.cshtml
+        }
 
-            _repo.Delete(id);
+        // DELETE (POST) - ejecuta borrado
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id, CancellationToken ct)
+        {
+            var user = await _repo.GetByIdAsync(id, ct);
+            if (user == null) return NotFound();
+
+            await _repo.DeleteAsync(id, ct);
             TempData["Success"] = "User successfully deleted!";
             return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult ByType(string type)
+        // FILTROS (reusan la vista Index)
+        [HttpGet]
+        public async Task<IActionResult> ByType(string type, CancellationToken ct)
         {
-            var users = _repo.GetByType(type);
+            var users = await _repo.GetByTypeAsync(type, ct);
             ViewBag.Type = type;
             return View("Index", users);
         }
 
-        public IActionResult ByLocation(string location)
+        [HttpGet]
+        public async Task<IActionResult> ByLocation(string location, CancellationToken ct)
         {
-            var users = _repo.GetByLocation(location);
+            var users = await _repo.GetByLocationAsync(location, ct);
             ViewBag.Location = location;
             return View("Index", users);
         }

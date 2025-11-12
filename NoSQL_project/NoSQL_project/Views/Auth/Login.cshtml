@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <h2 class="mb-3">Login</h2>
+
+        <form method="post" asp-action="Login">
+            @Html.AntiForgeryToken()
+
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input name="username" class="form-control" autocomplete="username" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input name="password" type="password" class="form-control" autocomplete="current-password" />
+            </div>
+
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <div class="text-danger mb-2">Invalid username or password.</div>
+            }
+
+            <button class="btn btn-primary">Login</button>
+        </form>
+    </div>
+</div>

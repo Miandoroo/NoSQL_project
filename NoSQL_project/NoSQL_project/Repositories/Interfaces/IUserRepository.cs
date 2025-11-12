@@ -1,16 +1,29 @@
-﻿using NoSQL_project.Models;
+﻿using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using NoSQL_project.Models;
 
 namespace NoSQL_project.Repositories.Interfaces
 {
-        public interface IUserRepository
-        {
-            List<Users> GetAll();
-            void Add(Users user);
-            Users? GetById(string id);
-            void Update(string id, Users user);
-            void Delete(string id);
-            List<Users> GetByType(string type);
-            List<Users> GetByLocation(string location);
-        }
-    
+    public interface IUserRepository
+    {
+        // ---------- CRUD ----------
+        Task<List<Users>> GetAllAsync(CancellationToken ct = default);
+        Task<Users?> GetByIdAsync(string id, CancellationToken ct = default);
+        Task AddAsync(Users user, CancellationToken ct = default);
+        Task UpdateAsync(string id, Users user, CancellationToken ct = default);
+        Task DeleteAsync(string id, CancellationToken ct = default);
+
+        // ---------- FILTERS / QUERIES ----------
+        Task<Users?> GetByUsernameAsync(string username, CancellationToken ct = default);
+        Task<Users?> GetByEmailAsync(string email, CancellationToken ct = default);
+        Task<List<Users>> GetByTypeAsync(string type, CancellationToken ct = default);
+        Task<List<Users>> GetByLocationAsync(string location, CancellationToken ct = default);
+
+        // ---------- AGGREGATIONS ----------
+        Task<List<MongoDB.Bson.BsonDocument>> Agg_CountByTypeAsync(CancellationToken ct = default);
+        Task<List<MongoDB.Bson.BsonDocument>> Agg_CountByLocationAsync(CancellationToken ct = default);
+        Task<List<MongoDB.Bson.BsonDocument>> Agg_UsersWithTicketCountAsync(CancellationToken ct = default);
+        Task<List<MongoDB.Bson.BsonDocument>> Agg_UsersWithOpenTicketsAsync(CancellationToken ct = default);
+    }
 }

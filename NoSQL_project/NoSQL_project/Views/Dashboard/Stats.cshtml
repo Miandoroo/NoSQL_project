@@ -1,0 +1,56 @@
+﻿@model NoSQL_project.Models.ViewModels.DashboardVm
+@{
+    string scope = Model.IsAll ? "All Tickets" : "My Tickets";
+    string actionName = Model.IsAll ? "All" : "My";
+}
+
+<h1>Dashboard — @scope (last @Model.Days d)</h1>
+
+<div class="mb-3">
+    <a class="btn btn-outline-secondary btn-sm" asp-action="@actionName" asp-route-days="7">Last 7 days</a>
+    <a class="btn btn-outline-secondary btn-sm" asp-action="@actionName" asp-route-days="30">Last 30 days</a>
+    <a class="btn btn-outline-secondary btn-sm" asp-action="@actionName" asp-route-days="3650">All time</a>
+</div>
+
+<div class="row g-3">
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="text-muted">Open</div>
+                <div class="display-6">@Model.Open</div>
+                <div class="text-muted">@Model.PctOpen.ToString("0.0")% of total</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="text-muted">In progress</div>
+                <div class="display-6">@Model.InProgress</div>
+                <div class="text-muted">@Model.PctInProgress.ToString("0.0")% of total</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="text-muted">Resolved</div>
+                <div class="display-6">@Model.Resolved</div>
+                <div class="text-muted">@Model.PctResolved.ToString("0.0")% of total</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="text-muted">Closed</div>
+                <div class="display-6">@Model.Closed</div>
+                <div class="text-muted">@Model.PctClosed.ToString("0.0")% of total</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-3">
+    <div class="text-muted">Total tickets: <strong>@Model.Total</strong></div>
+</div>

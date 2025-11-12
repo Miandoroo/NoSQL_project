@@ -1,7 +1,9 @@
+﻿using Microsoft.AspNetCore.Authentication.Cookies;
 using MongoDB.Driver;
 using NoSQL_project.Repositories;
 using NoSQL_project.Repositories.Interfaces;
-
+using NoSQL_project.Services;
+using NoSQL_project.Services.Interfaces;
 
 namespace NoSQL_project
 {
@@ -9,62 +11,74 @@ namespace NoSQL_project
     {
         public static void Main(string[] args)
         {
-            // Load .env before building configuration so env vars are available
+            // Carga las variables del archivo .env
             DotNetEnv.Env.TraversePath().Load();
 
             var builder = WebApplication.CreateBuilder(args);
 
-            // 1) Register MongoClient as a SINGLETON (one shared instance for the whole app)
-            // WHY: MongoClient is thread-safe and internally manages a connection pool.
-            // Reusing one instance is fast and efficient. Creating many clients would waste resources.
+            // ---------- MONGO CONFIGURATION ----------
+            // 1) MongoClient como Singleton (recomendado por MongoDB)
             builder.Services.AddSingleton<IMongoClient>(sp =>
             {
-                // Read the connection string from configuration (env var via .env)
                 var conn = builder.Configuration["Mongo:ConnectionString"];
                 if (string.IsNullOrWhiteSpace(conn))
-                    throw new InvalidOperationException("Mongo:ConnectionString is not configured. Did you set it in .env?");
-
-                // Optional: tweak settings (timeouts, etc.)
-                var settings = MongoClientSettings.FromConnectionString(conn);
-                // settings.ServerSelectionTimeout = TimeSpan.FromSeconds(5);
-
-                return new MongoClient(settings);
+                    throw new InvalidOperationException("Mongo:ConnectionString not configured (.env or appsettings.json)");
+                return new MongoClient(conn);
             });
 
-            // 2) Register IMongoDatabase as SCOPED (new per HTTP request)
-            // WHY: Fits the ASP.NET request lifecycle and keeps each request cleanly separated.
+            // 2) IMongoDatabase como Scoped (una por request)
             builder.Services.AddScoped(sp =>
             {
                 var client = sp.GetRequiredService<IMongoClient>();
-
-                var dbName = builder.Configuration["Mongo:Database"]; // from appsettings.json
+                var dbName = builder.Configuration["Mongo:Database"];
                 if (string.IsNullOrWhiteSpace(dbName))
-                    throw new InvalidOperationException("Mongo:Database is not configured in appsettings.json.");
-
+                    throw new InvalidOperationException("Mongo:Database not configured.");
                 return client.GetDatabase(dbName);
             });
-            // Add services to the container.
+
+            // ---------- AUTHENTICATION & AUTHORIZATION ----------
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = "/Auth/Login";
+                    options.LogoutPath = "/Auth/Logout";
+                    options.AccessDeniedPath = "/Auth/Denied";
+                    options.SlidingExpiration = true;
+                    options.ExpireTimeSpan = TimeSpan.FromHours(8);
+                });
+
+            builder.Services.AddAuthorization(options =>
+            {
+                options.AddPolicy("ServiceDeskOnly", p => p.RequireRole("ServiceDesk"));
+            });
+
+            // ---------- MVC ----------
             builder.Services.AddControllersWithViews();
 
+            // ---------- REPOSITORIES ----------
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<ITicketRepository, TicketRepository>();
 
+            // ---------- SERVICES ----------
+            builder.Services.AddScoped<IUserService, UserService>();
+            builder.Services.AddScoped<ITicketService, TicketService>();
+            builder.Services.AddScoped<ITicketReportService, TicketReportService>();
+
             var app = builder.Build();
 
-
-            // Configure the HTTP request pipeline.
+            // ---------- MIDDLEWARE PIPELINE ----------
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
 
+            // ⚠️ Orden correcto: primero autenticación, luego autorización
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllerRoute(
@@ -73,7 +87,5 @@ namespace NoSQL_project
 
             app.Run();
         }
-
     }
 }
-

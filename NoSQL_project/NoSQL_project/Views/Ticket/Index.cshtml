@@ -1,44 +1,58 @@
-﻿@model List<Tickets>
+﻿@model List<NoSQL_project.Models.Tickets>
+
+@functions {
+    string StatusText(int s) => s switch { 0 => "Open", 1 => "In progress", 2 => "Resolved", 3 => "Closed", _ => "Unknown" };
+    string StatusClass(int s) => s switch { 0 => "secondary", 1 => "warning", 2 => "success", 3 => "dark", _ => "secondary" };
+}
 
 <h1>Tickets</h1>
+<div class="mb-3">
+    <a class="btn btn-outline-secondary btn-sm" asp-action="@(User.IsInRole("ServiceDesk") ? "Index" : "My")" asp-route-days="7">
+        Last 7 days
+    </a>
+    <a class="btn btn-outline-secondary btn-sm" asp-action="@(User.IsInRole("ServiceDesk") ? "Index" : "My")" asp-route-days="30">
+        Last 30 days
+    </a>
+    <a class="btn btn-outline-secondary btn-sm" asp-action="@(User.IsInRole("ServiceDesk") ? "Index" : "My")" asp-route-days="3650">
+        All
+    </a>
+    <span class="ms-2 text-muted">Showing last @ViewBag.Days day(s)</span>
+</div>
 
-<table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-    <thead style="background-color: #f2f2f2;">
+<table class="table table-striped align-middle">
+    <thead>
         <tr>
             <th>Date</th>
             <th>Status</th>
             <th>Incident Subject</th>
             <th>Incident Type</th>
-            <th>DeadLine</th>
+            <th>Deadline</th>
             <th>Priority</th>
             <th>Description</th>
-            <th style="width: 200px;">Actions</th>
+            <th class="text-end">Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (Tickets tickets in Model)
+        @foreach (var t in Model)
         {
             <tr>
-                <td>@tickets.Date</td>
-                <td>@tickets.Status</td>
-                <td>@tickets.IncidentSubject</td>
-                <td>@tickets.IncidentType</td>
-                <td>@tickets.Deadline</td>
-                <td>@tickets.Priority</td>
-                <td>@tickets.Description</td>
+                <td>@t.Date.ToString("yyyy-MM-dd")</td>
                 <td>
-                    <a asp-action="Details" asp-route-id="@tickets.Id" class="btn btn-sm btn-info">
-                        <i class="bi bi-eye"></i> Details
-                    </a>
-                    <a asp-controller="Ticket"
-                       asp-action="Update"
-                       asp-route-id="@tickets.Id"
-                       class="btn btn-sm btn-primary">
-                        <i class="bi bi-ticket-perforated"></i> Editing existing ticket
-                    </a>
-                    <form asp-action="Delete" asp-route-id="@tickets.Id" method="post" style="display: inline;">
-                        <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this ticket?')">
-                            <i class="bi bi-trash"></i> Delete
+                    <span class="badge bg-@StatusClass(t.Status)">@StatusText(t.Status)</span>
+                </td>
+                <td>@t.IncidentSubject</td>
+                <td>@t.IncidentType</td>
+                <td>@t.Deadline.ToString("yyyy-MM-dd")</td>
+                <td>@t.Priority</td>
+                <td class="text-truncate" style="max-width: 260px;">@t.Description</td>
+                <td class="text-end">
+                    <a asp-controller="Ticket" asp-action="Details" asp-route-id="@t.Id" class="btn btn-sm btn-info">Details</a>
+                    <a asp-controller="Ticket" asp-action="Edit" asp-route-id="@t.Id" class="btn btn-sm btn-primary">Edit</a>
+                    <form asp-controller="Ticket" asp-action="Delete" asp-route-id="@t.Id" method="post" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-sm btn-danger"
+                                onclick="return confirm('Delete this ticket?')">
+                            Delete
                         </button>
                     </form>
                 </td>
@@ -46,3 +60,12 @@
         }
     </tbody>
 </table>
+
+@if (User.IsInRole("ServiceDesk"))
+{
+    <a asp-controller="Ticket" asp-action="Create" class="btn btn-success">New Ticket</a>
+}
+else
+{
+    <a asp-controller="Ticket" asp-action="CreateMine" class="btn btn-success">New Ticket</a>
+}

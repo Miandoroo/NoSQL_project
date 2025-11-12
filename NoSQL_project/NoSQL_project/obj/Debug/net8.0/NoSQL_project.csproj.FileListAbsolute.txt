@@ -172,3 +172,4 @@ C:\Users\migue\OneDrive\Desktop\NoSQLHope\NoSQL_project\NoSQL_project\obj\Debug\
 C:\Users\migue\OneDrive\Desktop\NoSQLHope\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.pdb
 C:\Users\migue\OneDrive\Desktop\NoSQLHope\NoSQL_project\NoSQL_project\obj\Debug\net8.0\NoSQL_project.genruntimeconfig.cache
 C:\Users\migue\OneDrive\Desktop\NoSQLHope\NoSQL_project\NoSQL_project\obj\Debug\net8.0\ref\NoSQL_project.dll
+C:\Users\migue\OneDrive\Desktop\NoSQLHope\NoSQL_project\NoSQL_project\bin\Debug\net8.0\BCrypt.Net-Next.dll
