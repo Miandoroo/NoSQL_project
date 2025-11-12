@@ -4,13 +4,11 @@ namespace NoSQL_project.Repositories.Interfaces
 {
     public interface ITicketRepository
     {
-        List<Tickets> GetAll();
-        void Add(Tickets tickets);
-        Tickets? GetById(string id);
-        void Update(string id, Tickets tickets);
+        List<Ticket> GetAll();
+        void Add(Ticket ticket);
+        Ticket? GetById(string id);
+        void Update(string id, Ticket ticket);
         void Delete(string id);
-        List<Tickets> GetByUserId(string userId);
-        List<Tickets> GetByStatus(int status);
-        List<Tickets> GetByPriority(string priority);
+        List<Ticket> GetByUserId(string userId);
     }
 }

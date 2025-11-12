@@ -2,60 +2,49 @@
 using MongoDB.Bson;
 using NoSQL_project.Models;
 using NoSQL_project.Repositories.Interfaces;
-using System.Linq;
-
 
 namespace NoSQL_project.Repositories
 {
     public class TicketRepository : ITicketRepository
     {
+        private readonly IMongoCollection<Ticket> _tickets;
 
-        private readonly IMongoCollection<Tickets> _ticketss;
         public TicketRepository(IMongoDatabase db)
         {
-            _ticketss = db.GetCollection<Tickets>("Tickets");
+            _tickets = db.GetCollection<Ticket>("Tickets");
         }
 
-        public List<Tickets> GetAll()
+        public List<Ticket> GetAll()
         {
-            return _ticketss.Find(_ => true).ToList();
-        }
-        public Tickets? GetById(string id)
-        {
-            return _ticketss.Find(Tickets => Tickets.Id == id).FirstOrDefault();
-        }
-        public void Add(Tickets tickets)
-        {
-            if (string.IsNullOrEmpty(tickets.Id))
-                tickets.Id = MongoDB.Bson.ObjectId.GenerateNewId().ToString();
-
-            _ticketss.InsertOne(tickets);
+            return _tickets.Find(_ => true).ToList();
         }
 
-        public void Update(string id, Tickets tickets)
+        public Ticket? GetById(string id)
         {
-            _ticketss.ReplaceOne(tickets => tickets.Id == id, tickets);
+            return _tickets.Find(ticket => ticket.Id == id).FirstOrDefault();
+        }
+
+        public void Add(Ticket ticket)
+        {
+            if (string.IsNullOrEmpty(ticket.Id))
+                ticket.Id = ObjectId.GenerateNewId().ToString();
+
+            _tickets.InsertOne(ticket);
+        }
+
+        public void Update(string id, Ticket ticket)
+        {
+            _tickets.ReplaceOne(t => t.Id == id, ticket);
         }
 
         public void Delete(string id)
         {
-            _ticketss.DeleteOne(ticket => ticket.Id == id);
+            _tickets.DeleteOne(ticket => ticket.Id == id);
         }
 
-        public List<Tickets> GetByUserId(string userId)
+        public List<Ticket> GetByUserId(string userId)
         {
-            return _ticketss.Find(ticket => ticket.UserId == userId).ToList();
+            return _tickets.Find(ticket => ticket.UserId == userId).ToList();
         }
-
-        public List<Tickets> GetByStatus(int status)
-        {
-            return _ticketss.Find(ticket => ticket.Status == status).ToList();
-        }
-
-        public List<Tickets> GetByPriority(string priority)
-        {
-            return _ticketss.Find(ticket => ticket.Priority == priority).ToList();
-        }
-        
     }
 }

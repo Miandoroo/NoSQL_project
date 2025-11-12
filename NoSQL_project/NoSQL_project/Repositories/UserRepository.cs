@@ -3,52 +3,60 @@ using MongoDB.Bson;
 using NoSQL_project.Models;
 using NoSQL_project.Repositories.Interfaces;
 
-
-
 namespace NoSQL_project.Repositories
 {
     public class UserRepository : IUserRepository
     {
-        private readonly IMongoCollection<Users> _userss;
+        private readonly IMongoCollection<User> _users;
+
         public UserRepository(IMongoDatabase db)
         {
-            _userss = db.GetCollection<Users>("Users");
+            _users = db.GetCollection<User>("Users");
         }
 
-        public List<Users> GetAll()
+        public List<User> GetAll()
         {
-            return _userss.Find(_ => true).ToList();
+            return _users.Find(_ => true).ToList();
         }
 
-        public Users? GetById(string id)
+        public User? GetById(string id)
         {
-            return _userss.Find(user => user.Id == id).FirstOrDefault();
+            if (string.IsNullOrWhiteSpace(id))
+                return null;
+            
+            if (ObjectId.TryParse(id, out var objectId))
+            {
+                return _users.Find(user => user.Id == id || user.Id == objectId.ToString()).FirstOrDefault();
+            }
+            
+            return _users.Find(user => user.Id == id).FirstOrDefault();
         }
 
-        public void Add(Users user)
+        public void Add(User user)
         {
-            _userss.InsertOne(user);
+            _users.InsertOne(user);
         }
 
-        public void Update(string id, Users user)
+        public void Update(string id, User user)
         {
-            _userss.ReplaceOne(user => user.Id == id, user);
+            _users.ReplaceOne(u => u.Id == id, user);
         }
 
         public void Delete(string id)
         {
-            _userss.DeleteOne(user => user.Id == id);
+            _users.DeleteOne(user => user.Id == id);
         }
 
-        public List<Users> GetByType(string type)
+        public User? GetByUsername(string username)
         {
-            return _userss.Find(user => user.Type == type).ToList();
+            if (string.IsNullOrWhiteSpace(username))
+                return null;
+            return _users.Find(user => user.Username != null && user.Username.ToLower() == username.ToLower()).FirstOrDefault();
         }
 
-        public List<Users> GetByLocation(string location)
+        public User? GetByEmail(string email)
         {
-            return _userss.Find(user => user.Location == location).ToList();
+            return _users.Find(user => user.Email == email).FirstOrDefault();
         }
-
     }
 }

@@ -1,0 +1,28 @@
+@model NoSQL_project.Models.Ticket
+
+<h2>Delete Ticket</h2>
+
+<div class="alert alert-warning">
+    <p>Are you sure you want to delete this ticket?</p>
+</div>
+
+<div class="mb-3">
+    <strong>Subject:</strong> @Model.IncidentSubject
+</div>
+<div class="mb-3">
+    <strong>Type:</strong> @Model.IncidentType
+</div>
+<div class="mb-3">
+    <strong>Status:</strong> @Model.Status
+</div>
+<div class="mb-3">
+    <strong>Priority:</strong> @Model.Priority
+</div>
+
+<form asp-action="DeleteConfirmed" asp-route-id="@Model.Id" method="post">
+    @Html.AntiForgeryToken()
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+
