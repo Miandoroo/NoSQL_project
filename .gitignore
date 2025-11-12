@@ -8,3 +8,4 @@
 *.jfm
 _ReSharper*/
 .vscode/
+/NoSQL_project/NoSQL_project/obj/NoSQL_project.csproj.nuget.g.props
