@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NoSQL_project.Models;
+using NoSQL_project.Services;
 using NoSQL_project.Services.Interfaces;
 using System.Security.Claims;
 
@@ -11,15 +12,17 @@ namespace NoSQL_project.Controllers
     {
         private readonly ITicketService _ticketService;
         private readonly IUserService _userService;
+        private readonly TicketSearchService _searchService;
 
-        public TicketController(ITicketService ticketService, IUserService userService)
+        public TicketController(ITicketService ticketService, IUserService userService, TicketSearchService searchService)
         {
             _ticketService = ticketService;
             _userService = userService;
+            _searchService = searchService;
         }
 
-        public IActionResult Index()
-        {
+       public IActionResult Index(string searchQuery)
+       {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             List<Ticket> tickets;
@@ -32,8 +35,18 @@ namespace NoSQL_project.Controllers
                 tickets = _ticketService.GetByUserId(userId);
             }
 
-            return View(tickets);
-        }
+            if (!string.IsNullOrWhiteSpace(searchQuery))
+            {
+                tickets = _searchService.SearchTickets(tickets, searchQuery);
+            }
+            else
+            {
+                tickets = tickets.OrderByDescending(t => t.Date).ToList();
+            }
+
+            ViewBag.SearchQuery = searchQuery;
+            return View(tickets);    
+       }
 
         [HttpGet]
         public IActionResult Create()
@@ -51,7 +64,7 @@ namespace NoSQL_project.Controllers
             if (ModelState.IsValid)
             {
                 if (!User.IsInRole("ServiceDeskEmployee"))
-                {
+        {
                     ticket.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 }
                 else if (string.IsNullOrEmpty(ticket.UserId))
@@ -129,11 +142,11 @@ namespace NoSQL_project.Controllers
                 else
                 {
                     ticket.UserId = existingTicket.UserId;
-                }
-                _ticketService.Update(id, ticket);
-                TempData["Success"] = "Successfully edited ticket";
-                return RedirectToAction(nameof(Index));
             }
+                _ticketService.Update(id, ticket);
+            TempData["Success"] = "Successfully edited ticket";
+            return RedirectToAction(nameof(Index));
+        }
 
             ViewBag.Users = _userService.GetAll();
             ViewBag.IsServiceDesk = User.IsInRole("ServiceDeskEmployee");
@@ -160,13 +173,13 @@ namespace NoSQL_project.Controllers
             try
             {
                 _ticketService.Delete(id);
-                TempData["Success"] = "Ticket successfully deleted!";
-                return RedirectToAction(nameof(Index));
-            }
+            TempData["Success"] = "Ticket successfully deleted!";
+            return RedirectToAction(nameof(Index));
+        }
             catch (ArgumentException)
-            {
+        {
                 return NotFound();
-            }
+        }
         }
     }
 }

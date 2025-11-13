@@ -25,7 +25,7 @@ namespace NoSQL_project.Repositories
                 return null;
             
             if (ObjectId.TryParse(id, out var objectId))
-            {
+        {
                 return _users.Find(user => user.Id == id || user.Id == objectId.ToString()).FirstOrDefault();
             }
             

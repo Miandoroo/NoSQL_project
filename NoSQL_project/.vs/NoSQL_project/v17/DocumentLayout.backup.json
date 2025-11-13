@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\views\\ticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\ticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -11,20 +27,12 @@
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\repositories\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\repositories\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\repositories\\interfaces\\iticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\repositories\\interfaces\\iticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\views\\user\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -39,20 +47,12 @@
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\ticket\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\views\\ticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\ticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\views\\ticket\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\ticket\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\noahv\\source\\repos\\nosql_projectfinal\\nosql_project\\nosql_project\\views\\ticket\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -69,8 +69,8 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 1282,
-          "SelectedChildIndex": 12,
+          "DockedWidth": 443,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Document",
@@ -119,7 +119,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Repositories\\Interfaces\\IUserRepository.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\Interfaces\\IUserRepository.cs",
@@ -132,45 +132,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Index.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\Ticket\\Index.cshtml",
               "ToolTip": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Index.cshtml",
               "RelativeToolTip": "NoSQL_project\\Views\\Ticket\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-12T17:48:30.803Z"
+              "WhenOpened": "2025-10-12T17:48:30.803Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "TicketController.cs",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Controllers\\TicketController.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Controllers\\TicketController.cs",
               "ToolTip": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Controllers\\TicketController.cs",
               "RelativeToolTip": "NoSQL_project\\Controllers\\TicketController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAcwDoAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAuwEUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-12T17:37:55.552Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\UserRepository.cs",
               "ToolTip": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "NoSQL_project\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAQwBIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAQwBIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T09:16:07.41Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Views\\User\\Update.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\User\\Update.cshtml",
@@ -182,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "ITicketRepository.cs",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Repositories\\Interfaces\\ITicketRepository.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\Interfaces\\ITicketRepository.cs",
@@ -194,20 +195,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "TicketRepository.cs",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Repositories\\TicketRepository.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\TicketRepository.cs",
               "ToolTip": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Repositories\\TicketRepository.cs",
               "RelativeToolTip": "NoSQL_project\\Repositories\\TicketRepository.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAwwBIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAwwBIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-12T17:40:58.482Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Views\\User\\Create.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\User\\Create.cshtml",
@@ -219,7 +220,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Program.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Program.cs",
@@ -227,11 +228,12 @@
               "RelativeToolTip": "NoSQL_project\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T09:24:31.92Z"
+              "WhenOpened": "2025-10-13T09:24:31.92Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Details.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\Ticket\\Details.cshtml",
@@ -243,7 +245,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Update.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\Ticket\\Update.cshtml",
@@ -255,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Views\\User\\Index.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\User\\Index.cshtml",
@@ -267,15 +269,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\noahv\\source\\repos\\NoSQL_projectFinal\\NoSQL_project\\NoSQL_project\\Controllers\\UserController.cs",
               "RelativeToolTip": "NoSQL_project\\Controllers\\UserController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAswEIAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-13T09:15:05.024Z"
+              "WhenOpened": "2025-10-13T09:15:05.024Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -292,12 +295,16 @@
           ]
         },
         {
-          "DockedWidth": 408,
+          "DockedWidth": 1247,
           "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             }
           ]
         }
