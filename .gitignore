@@ -26,11 +26,13 @@ bld/
 
 ## Visual Studio
 .vs/
+**/.vs/
 *.suo
 *.user
 *.useros
 *.sln.docstates
 .vscode/
+**/Properties/launchSettings.json
 
 ## Rider
 .idea/
