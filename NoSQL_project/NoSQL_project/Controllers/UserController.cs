@@ -10,7 +10,7 @@ using System.Security.Claims;
 
 namespace NoSQL_project.Controllers
 {
-    public class UserController : Controller
+    public class UserController : Controller 
     {
         private readonly IUserService _userService;
 
@@ -143,7 +143,7 @@ namespace NoSQL_project.Controllers
         public IActionResult Index()
         {
             List<User> users = _userService.GetAll();
-            return View(users);
+               return View(users);
         }
 
         [Authorize(Roles = "ServiceDeskEmployee")]
@@ -160,15 +160,15 @@ namespace NoSQL_project.Controllers
         {
             ModelState.Remove(nameof(NoSQL_project.Models.User.Id));
             ModelState.Remove(nameof(NoSQL_project.Models.User.PasswordHash));
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) 
                 return View(user);
 
             try
             {
                 _userService.Create(user, password);
-                TempData["Success"] = "User successfully added!";
-                return RedirectToAction(nameof(Index));
-            }
+            TempData["Success"] = "User successfully added!";
+            return RedirectToAction(nameof(Index));
+        }
             catch (ArgumentException ex)
             {
                 ModelState.AddModelError("", ex.Message);
@@ -213,9 +213,9 @@ namespace NoSQL_project.Controllers
             try
             {
                 _userService.Update(id, user, password);
-                TempData["Success"] = "Successfully edited user";
-                return RedirectToAction(nameof(Index));
-            }
+            TempData["Success"] = "Successfully edited user";
+            return RedirectToAction(nameof(Index));
+        }
             catch (ArgumentException ex)
             {
                 ModelState.AddModelError("", ex.Message);
@@ -243,11 +243,11 @@ namespace NoSQL_project.Controllers
             try
             {
                 _userService.Delete(id);
-                TempData["Success"] = "User successfully deleted!";
-                return RedirectToAction(nameof(Index));
-            }
+            TempData["Success"] = "User successfully deleted!";
+            return RedirectToAction(nameof(Index));
+        }
             catch (ArgumentException)
-            {
+        {
                 return NotFound();
             }
         }

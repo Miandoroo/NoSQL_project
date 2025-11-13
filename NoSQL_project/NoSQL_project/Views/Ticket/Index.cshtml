@@ -8,6 +8,18 @@
     </a>
 </p>
 
+<form asp-action="Index" method="get" class="mb-3">
+    <div class="row">
+        <div class="col-md-8">
+            <input type="text" name="searchQuery" value="@ViewBag.SearchQuery" class="form-control" placeholder="Search tickets (use AND/OR operators, e.g., 'error AND server' or 'bug OR issue')" />
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a asp-action="Index" class="btn btn-secondary">Clear</a>
+        </div>
+    </div>
+</form>
+
 <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
     <thead style="background-color: #f2f2f2;">
         <tr>

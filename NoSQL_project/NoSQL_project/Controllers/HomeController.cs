@@ -18,7 +18,7 @@ public class HomeController : Controller
         if (User.Identity.IsAuthenticated)
         {
             return RedirectToAction("Index", "Dashboard");
-        }
+    }
         return View();
     }
 

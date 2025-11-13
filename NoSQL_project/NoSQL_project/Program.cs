@@ -42,6 +42,7 @@ namespace NoSQL_project
             builder.Services.AddScoped<NoSQL_project.Services.Interfaces.ITicketActionService, TicketActionService>();
             builder.Services.AddScoped<NoSQL_project.Services.Interfaces.IUserService, UserService>();
             builder.Services.AddScoped<NoSQL_project.Services.Interfaces.ITicketService, TicketService>();
+            builder.Services.AddScoped<TicketSearchService>();
 
             builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
