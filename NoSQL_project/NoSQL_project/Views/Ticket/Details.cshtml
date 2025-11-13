@@ -49,14 +49,14 @@
                     </button>
                 </form>
 
-                @if (Model.Status == 0 || Model.Status == 1)
+                @if (Model.status == NoSQL_project.Enum.TicketStatus.Open || Model.status == NoSQL_project.Enum.TicketStatus.InProgress)
                 {
                     <form asp-action="Escalate" asp-route-id="@Model.Id" method="post" onsubmit="return confirm('Are you sure you want to escalate this ticket?');">
                         <button type="submit" class="btn btn-sm btn-warning">Escalate</button>
                     </form>
                 }
 
-                @if (Model.Status != 3)
+                @if (Model.status != NoSQL_project.Enum.TicketStatus.Closed)
                 {
                     <form asp-action="Close" asp-route-id="@Model.Id" method="post" onsubmit="return confirm('Are you sure you want to close this ticket?');">
                         <button type="submit" class="btn btn-sm btn-success">Close</button>

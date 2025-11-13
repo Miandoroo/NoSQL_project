@@ -27,16 +27,16 @@
             <tr>
                 <td>@ticket.Date.ToString("yyyy-MM-dd HH:mm")</td>
                 <td>
-                    @switch (ticket.Status)
+                    @switch (ticket.status)
                     {
-                        case 0:
-                        case 1:
+                        case NoSQL_project.Enum.TicketStatus.Open:
+                        case NoSQL_project.Enum.TicketStatus.InProgress:
                             <span class="badge bg-primary">Open</span>
                             break;
-                        case 2:
+                        case NoSQL_project.Enum.TicketStatus.Resolved:
                             <span class="badge bg-info">Resolved</span>
                             break;
-                        case 3:
+                        case NoSQL_project.Enum.TicketStatus.Closed:
                             <span class="badge bg-success">Closed</span>
                             break;
                     }

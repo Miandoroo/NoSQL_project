@@ -24,7 +24,7 @@ else
         <div class="card text-white bg-primary mb-3">
             <div class="card-header">Total Tickets</div>
             <div class="card-body">
-                <h4 class="card-title">@Model.TotalTickets</h4>
+                <h4 class="card-title">@Model.Stats.TotalTickets</h4>
             </div>
         </div>
     </div>
@@ -32,8 +32,8 @@ else
         <div class="card text-white bg-warning mb-3">
             <div class="card-header">Open Tickets</div>
             <div class="card-body">
-                <h4 class="card-title">@Model.OpenTickets</h4>
-                <p class="card-text">@Model.PercentOpen.ToString("F2")%</p>
+                <h4 class="card-title">@Model.Stats.OpenTickets</h4>
+                <p class="card-text">@Model.Stats.PercentOpen.ToString("F2")%</p>
             </div>
         </div>
     </div>
@@ -41,8 +41,8 @@ else
         <div class="card text-white bg-success mb-3">
             <div class="card-header">Resolved Tickets</div>
             <div class="card-body">
-                <h4 class="card-title">@Model.ResolvedTickets</h4>
-                <p class="card-text">@Model.PercentResolved.ToString("F2")%</p>
+                <h4 class="card-title">@Model.Stats.ResolvedTickets</h4>
+                <p class="card-text">@Model.Stats.PercentResolved.ToString("F2")%</p>
             </div>
         </div>
     </div>
@@ -50,8 +50,8 @@ else
         <div class="card text-white bg-secondary mb-3">
             <div class="card-header">Closed Tickets</div>
             <div class="card-body">
-                <h4 class="card-title">@Model.ClosedTickets</h4>
-                <p class="card-text">@Model.PercentClosed.ToString("F2")%</p>
+                <h4 class="card-title">@Model.Stats.ClosedTickets</h4>
+                <p class="card-text">@Model.Stats.PercentClosed.ToString("F2")%</p>
             </div>
         </div>
     </div>
@@ -81,16 +81,16 @@ else
                             <td>@ticket.IncidentSubject</td>
                             <td>@ticket.IncidentType</td>
                             <td>
-                                @switch (ticket.Status)
+                                @switch (ticket.status)
                                 {
-                                    case 0:
-                                    case 1:
+                                    case NoSQL_project.Enum.TicketStatus.Open:
+                                    case NoSQL_project.Enum.TicketStatus.InProgress:
                                         <span class="badge bg-primary">Open</span>
                                         break;
-                                    case 2:
+                                    case NoSQL_project.Enum.TicketStatus.Resolved:
                                         <span class="badge bg-info">Resolved</span>
                                         break;
-                                    case 3:
+                                    case NoSQL_project.Enum.TicketStatus.Closed:
                                         <span class="badge bg-success">Closed</span>
                                         break;
                                 }

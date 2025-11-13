@@ -1,6 +1,7 @@
 ﻿using NoSQL_project.Models;
 using NoSQL_project.Repositories.Interfaces;
 using NoSQL_project.Services.Interfaces;
+using NoSQL_project.Enum;
 
 namespace NoSQL_project.Services
 {
@@ -16,12 +17,12 @@ namespace NoSQL_project.Services
         {
             Ticket ticket = _ticketRepository.GetById(id);
 
-            if (ticket.Status == 2 || ticket.Status == 3)
+            if (ticket.status == TicketStatus.Resolved || ticket.status == TicketStatus.Closed)
             {
                 throw new InvalidOperationException("Can't escalate resolved or closed tickets");
             }
 
-            ticket.Priority = "hoog";
+            ticket.Priority = TicketPrioritys.hoog;
             ticket.Deadline = DateTime.Now.AddHours(24);
 
             _ticketRepository.Update(id, ticket);
@@ -30,12 +31,12 @@ namespace NoSQL_project.Services
         {
             Ticket ticket = _ticketRepository.GetById(id);
 
-            if (ticket.Status == 3)
+            if (ticket.status == TicketStatus.Closed)
             {
                 throw new InvalidOperationException("Ticket is already closed");
             }
 
-            ticket.Status = 3;
+            ticket.status = TicketStatus.Closed;
             ticket.Deadline = DateTime.Now;
 
             _ticketRepository.Update(id, ticket);
@@ -45,12 +46,12 @@ namespace NoSQL_project.Services
         {
             Ticket ticket = GetTicketOrThrow(id);
 
-            if (ticket.Status == 3)
+            if (ticket.status == TicketStatus.Closed)
             {
                 throw new InvalidOperationException("Cannot resolve a closed ticket");
             }
 
-            ticket.Status = 2;
+            ticket.status = TicketStatus.Resolved;
             _ticketRepository.Update(ticket.Id, ticket);
         }
 
