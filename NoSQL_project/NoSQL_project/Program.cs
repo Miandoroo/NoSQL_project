@@ -56,12 +56,6 @@ namespace NoSQL_project
 
             var app = builder.Build();
 
-            using (var scope = app.Services.CreateScope())
-            {
-                var userService = scope.ServiceProvider.GetRequiredService<NoSQL_project.Services.Interfaces.IUserService>();
-                userService.Initialize();
-            }
-
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Home/Error");

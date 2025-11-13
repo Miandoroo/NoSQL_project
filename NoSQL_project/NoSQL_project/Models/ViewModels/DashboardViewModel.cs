@@ -2,17 +2,19 @@ using NoSQL_project.Models;
 
 namespace NoSQL_project.Models.ViewModels
 {
+    // ViewModel for the Dashboard page
     public class DashboardViewModel
     {
-        public int TotalTickets { get; set; }
-        public int OpenTickets { get; set; }
-        public int ResolvedTickets { get; set; }
-        public int ClosedTickets { get; set; }
-        public double PercentOpen { get; set; }
-        public double PercentResolved { get; set; }
-        public double PercentClosed { get; set; }
-        public List<Ticket> RecentTickets { get; set; }
-        public bool IsServiceDesk { get; set; }
+       public TicketStats Stats { get; set; }
+       public List<Ticket> RecentTickets { get; set; }
+       public bool IsServiceDesk { get; set; }
+
+        public DashboardViewModel(TicketStats stats, List<Ticket> recentTickets, bool isServiceDesk)
+        {
+            Stats = stats;
+            RecentTickets = recentTickets;
+            IsServiceDesk = isServiceDesk;
+        }
     }
 }
 

@@ -14,7 +14,6 @@ namespace NoSQL_project.Services.Interfaces
         string HashPassword(string password);
         bool VerifyPassword(string password, string hash);
         User? AuthenticateUser(string username, string password);
-        void Initialize();
     }
 }
 

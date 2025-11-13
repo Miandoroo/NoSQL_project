@@ -1,3 +1,4 @@
+using NoSQL_project.Enum;
 using System.ComponentModel.DataAnnotations;
 
 namespace NoSQL_project.Models.ViewModels

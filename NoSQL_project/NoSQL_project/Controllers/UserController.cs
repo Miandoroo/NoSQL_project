@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using NoSQL_project.Enum;
 using NoSQL_project.Models;
 using NoSQL_project.Models.ViewModels;
 using NoSQL_project.Services.Interfaces;
@@ -50,7 +51,7 @@ namespace NoSQL_project.Controllers
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Name, user.Username),
                 new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, user.Role)
+                new Claim(ClaimTypes.Role, user.Role.ToString())
             };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -122,7 +123,7 @@ namespace NoSQL_project.Controllers
                 PhoneNumber = model.PhoneNumber ?? "",
                 Location = model.Location ?? "",
                 Type = model.Type ?? "",
-                Role = "RegularEmployee"
+                Role = UserRoles.RegularEmployee
             };
 
             try

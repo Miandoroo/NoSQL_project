@@ -1,6 +1,7 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 using System.ComponentModel.DataAnnotations;
+using NoSQL_project.Enum;
 
 namespace NoSQL_project.Models
 {
@@ -33,7 +34,7 @@ namespace NoSQL_project.Models
 
         [BsonElement("role")]
         [Required]
-        public string Role { get; set; }
+        public UserRoles Role { get; set; }
 
         [BsonElement("username")]
         [Required]
@@ -41,6 +42,6 @@ namespace NoSQL_project.Models
 
         [BsonElement("passwordHash")]
         [Required]
-        public string PasswordHash { get; set; }
+        public string? PasswordHash { get; set; }
     }
 }

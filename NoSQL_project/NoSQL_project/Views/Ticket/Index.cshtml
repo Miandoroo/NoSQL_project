@@ -24,7 +24,7 @@
         {
             <tr>
                 <td>@ticket.Date.ToString("yyyy-MM-dd HH:mm")</td>
-                <td>@ticket.Status</td>
+                <td>@ticket.status</td>
                 <td>@ticket.IncidentSubject</td>
                 <td>@ticket.IncidentType</td>
                 <td>@(ticket.Deadline?.ToString("yyyy-MM-dd HH:mm") ?? "N/A")</td>
