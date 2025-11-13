@@ -50,6 +50,7 @@ namespace NoSQL_project.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Ticket ticket)
         {
+            ModelState.Remove(nameof(Ticket.Id));
             if (ModelState.IsValid)
             {
                 if (!User.IsInRole("ServiceDeskEmployee"))

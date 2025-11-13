@@ -1,4 +1,5 @@
 using NoSQL_project.Models;
+using NoSQL_project.Models.ViewModels;
 
 namespace NoSQL_project.Services.Interfaces
 {
@@ -10,6 +11,9 @@ namespace NoSQL_project.Services.Interfaces
         void Create(Ticket ticket);
         void Update(string id, Ticket ticket);
         void Delete(string id);
+        public DashboardViewModel DashboardEmployee(bool IsServiceDesk, string userId);
+        List<PriorityCount> GetTicketsByPriority(string userId, bool isServiceDesk);
+
     }
 }
 

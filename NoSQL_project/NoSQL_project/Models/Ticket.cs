@@ -1,5 +1,6 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
+using NoSQL_project.Enum;
 
 namespace NoSQL_project.Models
 {
@@ -14,20 +15,23 @@ namespace NoSQL_project.Models
         public DateTime Date { get; set; }
 
         [BsonElement("status")]
-        public int Status { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public TicketStatus status { get; set; }
 
         [BsonElement("incidentSubject")]
         public string IncidentSubject { get; set; }
 
         [BsonElement("incidentType")]
-        public string IncidentType { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public TicketIncidentType IncidentType { get; set; }
 
         [BsonElement("deadline")]
         [BsonRepresentation(BsonType.DateTime)]
         public DateTime? Deadline { get; set; }
 
         [BsonElement("priority")]
-        public string Priority { get; set; }
+        [BsonRepresentation(BsonType.String)]
+        public TicketPrioritys Priority { get; set; }
 
         [BsonElement("description")]
         public string Description { get; set; }
@@ -35,5 +39,18 @@ namespace NoSQL_project.Models
         [BsonElement("userId")]
         [BsonRepresentation(BsonType.ObjectId)]
         public string UserId { get; set; }
+
+        public Ticket(string id, DateTime date, TicketStatus status, string incidentSubject, TicketIncidentType incidentType, DateTime? deadline, TicketPrioritys priority, string description, string userId)
+        {
+            Id = id;
+            Date = date;
+            this.status = status;
+            IncidentSubject = incidentSubject;
+            IncidentType = incidentType;
+            Deadline = deadline;
+            Priority = priority;
+            Description = description;
+            UserId = userId;
+        }
     }
 }
