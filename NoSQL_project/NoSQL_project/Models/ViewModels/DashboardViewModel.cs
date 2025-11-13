@@ -1,5 +1,3 @@
-using NoSQL_project.Models;
-
 namespace NoSQL_project.Models.ViewModels
 {
     // ViewModel for the Dashboard page
