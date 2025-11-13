@@ -39,6 +39,7 @@ namespace NoSQL_project
 
             builder.Services.AddScoped<IUserRepository, UserRepository>();
             builder.Services.AddScoped<ITicketRepository, TicketRepository>();
+            builder.Services.AddScoped<NoSQL_project.Services.Interfaces.ITicketActionService, TicketActionService>();
             builder.Services.AddScoped<NoSQL_project.Services.Interfaces.IUserService, UserService>();
             builder.Services.AddScoped<NoSQL_project.Services.Interfaces.ITicketService, TicketService>();
 

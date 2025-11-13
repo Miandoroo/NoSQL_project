@@ -26,7 +26,21 @@
         {
             <tr>
                 <td>@ticket.Date.ToString("yyyy-MM-dd HH:mm")</td>
-                <td>@ticket.Status</td>
+                <td>
+                    @switch (ticket.Status)
+                    {
+                        case 0:
+                        case 1:
+                            <span class="badge bg-primary">Open</span>
+                            break;
+                        case 2:
+                            <span class="badge bg-info">Resolved</span>
+                            break;
+                        case 3:
+                            <span class="badge bg-success">Closed</span>
+                            break;
+                    }
+                </td>
                 <td>@ticket.IncidentSubject</td>
                 <td>@ticket.IncidentType</td>
                 <td>@(ticket.Deadline?.ToString("yyyy-MM-dd HH:mm") ?? "N/A")</td>
@@ -45,9 +59,9 @@
                     @if (User.IsInRole("ServiceDeskEmployee"))
                     {
                         <a asp-controller="Ticket"
-                           asp-action="Delete"
-                           asp-route-id="@ticket.Id"
-                           class="btn btn-sm btn-danger">
+                            asp-action="Delete"
+                            asp-route-id="@ticket.Id"
+                            class="btn btn-sm btn-danger">
                             <i class="bi bi-trash"></i> Delete
                         </a>
                     }
