@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\onedrive\\desktop\\nosqlhope\\nosql_project\\nosql_project\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\onedrive\\desktop\\nosqlhope\\nosql_project\\nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\onedrive\\desktop\\nosqlhope\\nosql_project\\nosql_project\\views\\ticket\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\ticket\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -59,10 +67,6 @@
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\enum\\ticketincidenttype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\onedrive\\desktop\\nosqlhope\\nosql_project\\nosql_project\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\dashboard\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\onedrive\\desktop\\nosqlhope\\nosql_project\\nosql_project\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\models\\ticket.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -101,10 +105,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\onedrive\\desktop\\nosqlhope\\nosql_project\\nosql_project\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\user\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\onedrive\\desktop\\nosqlhope\\nosql_project\\nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\migue\\onedrive\\desktop\\nosqlhope\\nosql_project\\nosql_project\\views\\user\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -180,46 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Details.cshtml",
-              "RelativeDocumentMoniker": "NoSQL_project\\Views\\Ticket\\Details.cshtml",
-              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Details.cshtml",
-              "RelativeToolTip": "NoSQL_project\\Views\\Ticket\\Details.cshtml",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAUwA8AAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-13T09:20:35.838Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TicketStats.cs",
-              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\TicketStats.cs",
-              "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\TicketStats.cs",
-              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\TicketStats.cs",
-              "RelativeToolTip": "NoSQL_project\\Models\\ViewModels\\TicketStats.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T15:53:56.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "PriorityCount.cs",
-              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\PriorityCount.cs",
-              "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\PriorityCount.cs",
-              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\PriorityCount.cs",
-              "RelativeToolTip": "NoSQL_project\\Models\\ViewModels\\PriorityCount.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-13T19:01:39.808Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Create.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\Ticket\\Create.cshtml",
@@ -232,7 +193,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\User\\Index.cshtml",
+              "RelativeDocumentMoniker": "NoSQL_project\\Views\\User\\Index.cshtml",
+              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\User\\Index.cshtml",
+              "RelativeToolTip": "NoSQL_project\\Views\\User\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T18:10:14.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Details.cshtml",
+              "RelativeDocumentMoniker": "NoSQL_project\\Views\\Ticket\\Details.cshtml",
+              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Details.cshtml",
+              "RelativeToolTip": "NoSQL_project\\Views\\Ticket\\Details.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwA8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-13T09:20:35.838Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\Dashboard\\Index.cshtml",
+              "RelativeDocumentMoniker": "NoSQL_project\\Views\\Dashboard\\Index.cshtml",
+              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\Dashboard\\Index.cshtml",
+              "RelativeToolTip": "NoSQL_project\\Views\\Dashboard\\Index.cshtml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAADAAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-11-13T17:06:54.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PriorityCount.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\PriorityCount.cs",
+              "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\PriorityCount.cs",
+              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\PriorityCount.cs",
+              "RelativeToolTip": "NoSQL_project\\Models\\ViewModels\\PriorityCount.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T19:01:39.808Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TicketStats.cs",
+              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\TicketStats.cs",
+              "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\TicketStats.cs",
+              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\TicketStats.cs",
+              "RelativeToolTip": "NoSQL_project\\Models\\ViewModels\\TicketStats.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-13T15:53:56.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "TicketStatus.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Enum\\TicketStatus.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Enum\\TicketStatus.cs",
@@ -245,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "TicketRepository.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Repositories\\TicketRepository.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\TicketRepository.cs",
@@ -258,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ITicketRepository.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Repositories\\Interfaces\\ITicketRepository.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\Interfaces\\ITicketRepository.cs",
@@ -271,7 +297,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "ITicketService.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Services\\Interfaces\\ITicketService.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Services\\Interfaces\\ITicketService.cs",
@@ -284,7 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "UserRoles.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Enum\\UserRoles.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Enum\\UserRoles.cs",
@@ -297,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "TicketWithUser.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\TicketWithUser.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\TicketWithUser.cs",
@@ -310,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "IncidentTypeCount.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\IncidentTypeCount.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\IncidentTypeCount.cs",
@@ -323,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "TicketIncidentType.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Enum\\TicketIncidentType.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Enum\\TicketIncidentType.cs",
@@ -336,7 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "TicketPrioritys.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Enum\\TicketPrioritys.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Enum\\TicketPrioritys.cs",
@@ -349,7 +375,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "TicketService.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Services\\TicketService.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Services\\TicketService.cs",
@@ -362,20 +388,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\Dashboard\\Index.cshtml",
-              "RelativeDocumentMoniker": "NoSQL_project\\Views\\Dashboard\\Index.cshtml",
-              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\Dashboard\\Index.cshtml",
-              "RelativeToolTip": "NoSQL_project\\Views\\Dashboard\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABoAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-11-13T17:06:54.796Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\LoginViewModel.cs",
@@ -388,7 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "Ticket.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\Ticket.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\Ticket.cs",
@@ -401,7 +414,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "TicketController.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Controllers\\TicketController.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Controllers\\TicketController.cs",
@@ -414,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Controllers\\UserController.cs",
@@ -427,7 +440,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "DashboardViewModel.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\DashboardViewModel.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\DashboardViewModel.cs",
@@ -440,7 +453,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\ErrorViewModel.cs",
@@ -453,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\User.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\User.cs",
@@ -466,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\RegisterViewModel.cs",
@@ -479,7 +492,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Delete.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\Ticket\\Delete.cshtml",
@@ -492,7 +505,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\User\\Create.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\User\\Create.cshtml",
@@ -501,19 +514,6 @@
               "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-13T09:17:43.195Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\User\\Index.cshtml",
-              "RelativeDocumentMoniker": "NoSQL_project\\Views\\User\\Index.cshtml",
-              "ToolTip": "C:\\Users\\migue\\OneDrive\\Desktop\\NoSQLHope\\NoSQL_project\\NoSQL_project\\Views\\User\\Index.cshtml",
-              "RelativeToolTip": "NoSQL_project\\Views\\User\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-12T18:10:14.703Z",
               "EditorCaption": ""
             },
             {
