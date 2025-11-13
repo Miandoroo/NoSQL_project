@@ -3,7 +3,9 @@
 <h1>Tickets</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Create New Ticket</a>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-circle"></i>Create New Ticket
+    </a>
 </p>
 
 <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
@@ -24,7 +26,21 @@
         {
             <tr>
                 <td>@ticket.Date.ToString("yyyy-MM-dd HH:mm")</td>
-                <td>@ticket.status</td>
+                <td>
+                    @switch (ticket.Status)
+                    {
+                        case 0:
+                        case 1:
+                            <span class="badge bg-primary">Open</span>
+                            break;
+                        case 2:
+                            <span class="badge bg-info">Resolved</span>
+                            break;
+                        case 3:
+                            <span class="badge bg-success">Closed</span>
+                            break;
+                    }
+                </td>
                 <td>@ticket.IncidentSubject</td>
                 <td>@ticket.IncidentType</td>
                 <td>@(ticket.Deadline?.ToString("yyyy-MM-dd HH:mm") ?? "N/A")</td>
@@ -38,14 +54,14 @@
                        asp-action="Update"
                        asp-route-id="@ticket.Id"
                        class="btn btn-sm btn-primary">
-                        <i class="bi bi-ticket-perforated"></i> Editing existing ticket
+                        <i class="bi bi-pencil"></i> Edit
                     </a>
                     @if (User.IsInRole("ServiceDeskEmployee"))
                     {
                         <a asp-controller="Ticket"
-                           asp-action="Delete"
-                           asp-route-id="@ticket.Id"
-                           class="btn btn-sm btn-danger">
+                            asp-action="Delete"
+                            asp-route-id="@ticket.Id"
+                            class="btn btn-sm btn-danger">
                             <i class="bi bi-trash"></i> Delete
                         </a>
                     }

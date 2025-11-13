@@ -11,11 +11,13 @@ namespace NoSQL_project.Controllers
     {
         private readonly ITicketService _ticketService;
         private readonly IUserService _userService;
+        private readonly ITicketActionService _actionService;
 
-        public TicketController(ITicketService ticketService, IUserService userService)
+        public TicketController(ITicketService ticketService, IUserService userService, ITicketActionService actionService)
         {
             _ticketService = ticketService;
             _userService = userService;
+            _actionService = actionService;
         }
 
         public IActionResult Index()
@@ -168,6 +170,36 @@ namespace NoSQL_project.Controllers
             {
                 return NotFound();
             }
+        }
+
+        [Authorize(Roles = "ServiceDeskEmployee")]
+        public IActionResult Escalate(string id)
+        {
+            try
+            {
+                _actionService.Escalate(id);
+                TempData["Success"] = "Ticket successfully escalated";
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = ex.Message;
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
+        [Authorize(Roles = "ServiceDeskEmployee")]
+        public IActionResult Close(string id)
+        {
+            try
+            {
+                _actionService.Close(id);
+                TempData["Success"] = "Ticket successfully closed";
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = ex.Message;
+            }
+            return RedirectToAction(nameof(Index));
         }
     }
 }

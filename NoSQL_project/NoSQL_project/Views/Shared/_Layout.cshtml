@@ -7,6 +7,58 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/NoSQL_project.styles.css" asp-append-version="true" />
+
+    <style>
+        body{
+            font-family: sans-serif;
+            background-color: #f8fafc;
+        }
+
+        .navbar{
+            background: linear-gradient(90deg, #4f46e5, #3b82f8);
+        }
+
+        .navbar .nav-link,
+        .navbar-brand,
+        .navbar-text {
+            color: white !important;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar .nav.nav-link::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ffd700;
+            transition: width 0.3s ease;
+        }
+
+        .navbar .nav-link:hover::after {
+            width: 100%
+        }
+
+        .navbar .nav-link:hover {
+            color: #ffd700 !important;
+        }
+
+        footer {
+            background: #3b82f8;
+            color: #ffffff !important;
+            text-align: center;
+
+        }
+
+        main{
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 12px;
+
+        }
+    </style>
 </head>
 <body>
     <header>
