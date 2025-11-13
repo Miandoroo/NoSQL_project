@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\kuba2\\downloads\\nosql_project\\nosql_project\\nosql_project\\views\\ticket\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\ticket\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\kuba2\\downloads\\nosql_project\\nosql_project\\nosql_project\\views\\ticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\ticket\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\kuba2\\downloads\\nosql_project\\nosql_project\\nosql_project\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\kuba2\\downloads\\nosql_project\\nosql_project\\nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\kuba2\\downloads\\nosql_project\\nosql_project\\nosql_project\\views\\ticket\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\ticket\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\kuba2\\downloads\\nosql_project\\nosql_project\\nosql_project\\views\\ticket\\update.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -17,10 +25,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\kuba2\\downloads\\nosql_project\\nosql_project\\nosql_project\\services\\ticketactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\services\\ticketactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\kuba2\\downloads\\nosql_project\\nosql_project\\nosql_project\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\kuba2\\downloads\\nosql_project\\nosql_project\\nosql_project\\repositories\\ticketrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -75,10 +79,6 @@
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\kuba2\\downloads\\nosql_project\\nosql_project\\nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|c:\\users\\kuba2\\downloads\\nosql_project\\nosql_project\\nosql_project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{96F16AE7-CF00-4B1C-AB0F-9397D4004D62}|NoSQL_project\\NoSQL_project.csproj|solutionrelative:nosql_project\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -118,7 +118,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 443,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
@@ -168,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Program.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Program.cs",
@@ -181,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "TicketController.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Controllers\\TicketController.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Controllers\\TicketController.cs",
@@ -194,33 +194,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\UserRepository.cs",
               "ToolTip": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Repositories\\UserRepository.cs",
               "RelativeToolTip": "NoSQL_project\\Repositories\\UserRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-13T09:16:07.41Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Index.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\Ticket\\Index.cshtml",
-              "ToolTip": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Index.cshtml",
-              "RelativeToolTip": "NoSQL_project\\Views\\Ticket\\Index.cshtml",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAAE4AAAAzAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Index.cshtml*",
+              "RelativeToolTip": "NoSQL_project\\Views\\Ticket\\Index.cshtml*",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAACcAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-12T17:48:30.803Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "TicketActionService.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Services\\TicketActionService.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Services\\TicketActionService.cs",
@@ -233,20 +233,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Details.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\Ticket\\Details.cshtml",
               "ToolTip": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Details.cshtml",
               "RelativeToolTip": "NoSQL_project\\Views\\Ticket\\Details.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAADMAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADMAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-13T09:20:35.838Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Update.cshtml",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Views\\Ticket\\Update.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\Ticket\\Update.cshtml",
@@ -259,7 +259,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Views\\User\\Index.cshtml",
+              "RelativeDocumentMoniker": "NoSQL_project\\Views\\User\\Index.cshtml",
+              "ToolTip": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Views\\User\\Index.cshtml",
+              "RelativeToolTip": "NoSQL_project\\Views\\User\\Index.cshtml",
+              "ViewState": "AgIAACIAAAAAAAAAAAAAADUAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-12T18:10:14.703Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "TicketRepository.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Repositories\\TicketRepository.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Repositories\\TicketRepository.cs",
@@ -272,7 +285,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "TicketService.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Services\\TicketService.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Services\\TicketService.cs",
@@ -285,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "DashboardController.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Controllers\\DashboardController.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Controllers\\DashboardController.cs",
@@ -298,7 +311,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Ticket.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Models\\Ticket.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\Ticket.cs",
@@ -311,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ITicketActionService.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Services\\Interfaces\\ITicketActionService.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Services\\Interfaces\\ITicketActionService.cs",
@@ -324,7 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Views\\Dashboard\\Index.cshtml",
               "RelativeDocumentMoniker": "NoSQL_project\\Views\\Dashboard\\Index.cshtml",
@@ -337,7 +350,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ITicketService.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Services\\Interfaces\\ITicketService.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Services\\Interfaces\\ITicketService.cs",
@@ -350,7 +363,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\RegisterViewModel.cs",
@@ -363,7 +376,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "LoginViewModel.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\LoginViewModel.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\LoginViewModel.cs",
@@ -376,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "DashboardViewModel.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Models\\ViewModels\\DashboardViewModel.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\ViewModels\\DashboardViewModel.cs",
@@ -389,7 +402,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Models\\User.cs",
               "RelativeDocumentMoniker": "NoSQL_project\\Models\\User.cs",
@@ -398,19 +411,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-13T13:54:26.312Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Views\\User\\Index.cshtml",
-              "RelativeDocumentMoniker": "NoSQL_project\\Views\\User\\Index.cshtml",
-              "ToolTip": "C:\\Users\\kuba2\\Downloads\\NoSQL_Project\\NoSQL_project\\NoSQL_project\\Views\\User\\Index.cshtml",
-              "RelativeToolTip": "NoSQL_project\\Views\\User\\Index.cshtml",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAADUAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-12T18:10:14.703Z",
               "EditorCaption": ""
             },
             {
