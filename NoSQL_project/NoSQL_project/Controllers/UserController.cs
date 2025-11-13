@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using NoSQL_project.Enum;
 using NoSQL_project.Models;
 using NoSQL_project.Models.ViewModels;
 using NoSQL_project.Services.Interfaces;
@@ -46,14 +45,7 @@ namespace NoSQL_project.Controllers
                 return View(model);
             }
 
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.NameIdentifier, user.Id),
-                new Claim(ClaimTypes.Name, user.Username),
-                new Claim(ClaimTypes.Email, user.Email),
-                new Claim(ClaimTypes.Role, user.Role.ToString())
-            };
-
+            var claims = _userService.CreateClaims(user);
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
             var authProperties = new AuthenticationProperties
             {
@@ -100,31 +92,16 @@ namespace NoSQL_project.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var existingUserByUsername = _userService.GetByUsername(model.Username);
-            if (existingUserByUsername != null)
+            if (!_userService.ValidateUserRegistration(model.Username, model.Email, out string? errorMessage))
             {
-                ModelState.AddModelError("Username", "Username is already taken");
+                if (errorMessage.Contains("Username"))
+                    ModelState.AddModelError("Username", errorMessage);
+                else
+                    ModelState.AddModelError("Email", errorMessage);
                 return View(model);
             }
 
-            var existingUserByEmail = _userService.GetByEmail(model.Email);
-            if (existingUserByEmail != null)
-            {
-                ModelState.AddModelError("Email", "Email is already registered");
-                return View(model);
-            }
-
-            var newUser = new User
-            {
-                FirstName = model.FirstName,
-                LastName = model.LastName,
-                Email = model.Email,
-                Username = model.Username,
-                PhoneNumber = model.PhoneNumber ?? "",
-                Location = model.Location ?? "",
-                Type = model.Type ?? "",
-                Role = UserRoles.RegularEmployee
-            };
+            var newUser = _userService.CreateUserFromRegister(model);
 
             try
             {
@@ -142,8 +119,7 @@ namespace NoSQL_project.Controllers
         [Authorize(Roles = "ServiceDeskEmployee")]
         public IActionResult Index()
         {
-            List<User> users = _userService.GetAll();
-               return View(users);
+            return View(_userService.GetAll());
         }
 
         [Authorize(Roles = "ServiceDeskEmployee")]
@@ -166,9 +142,9 @@ namespace NoSQL_project.Controllers
             try
             {
                 _userService.Create(user, password);
-            TempData["Success"] = "User successfully added!";
-            return RedirectToAction(nameof(Index));
-        }
+                TempData["Success"] = "User successfully added!";
+                return RedirectToAction(nameof(Index));
+            }
             catch (ArgumentException ex)
             {
                 ModelState.AddModelError("", ex.Message);
@@ -181,9 +157,8 @@ namespace NoSQL_project.Controllers
         {
             var user = _userService.GetById(id);
             if (user == null)
-            {
                 return NotFound();
-            }
+            
             return View(user);
         }
 
@@ -191,11 +166,10 @@ namespace NoSQL_project.Controllers
         [HttpGet]
         public IActionResult Update(string id)
         {
-            User user = _userService.GetById(id);
+            var user = _userService.GetById(id);
             if (user == null)
-            {
                 return NotFound();
-            }
+            
             return View(user);
         }
 
@@ -213,9 +187,9 @@ namespace NoSQL_project.Controllers
             try
             {
                 _userService.Update(id, user, password);
-            TempData["Success"] = "Successfully edited user";
-            return RedirectToAction(nameof(Index));
-        }
+                TempData["Success"] = "Successfully edited user";
+                return RedirectToAction(nameof(Index));
+            }
             catch (ArgumentException ex)
             {
                 ModelState.AddModelError("", ex.Message);
@@ -229,9 +203,8 @@ namespace NoSQL_project.Controllers
         {
             var user = _userService.GetById(id);
             if (user == null)
-            {
                 return NotFound();
-            }
+            
             return View(user);
         }
 
@@ -243,11 +216,11 @@ namespace NoSQL_project.Controllers
             try
             {
                 _userService.Delete(id);
-            TempData["Success"] = "User successfully deleted!";
-            return RedirectToAction(nameof(Index));
-        }
+                TempData["Success"] = "User successfully deleted!";
+                return RedirectToAction(nameof(Index));
+            }
             catch (ArgumentException)
-        {
+            {
                 return NotFound();
             }
         }

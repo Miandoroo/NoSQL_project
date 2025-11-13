@@ -1,10 +1,9 @@
 using MongoDB.Bson;
 using NoSQL_project.Models;
 using NoSQL_project.Models.ViewModels;
-using NoSQL_project.Repositories;
 using NoSQL_project.Repositories.Interfaces;
+using NoSQL_project.Services;
 using NoSQL_project.Services.Interfaces;
-using System.Security.Claims;
 
 namespace NoSQL_project.Services
 {
@@ -34,7 +33,7 @@ namespace NoSQL_project.Services
             return _ticketRepo.GetById(id);
         }
 
-        public void Create(Ticket ticket)
+        public void Create(Ticket ticket, string? currentUserId, bool isServiceDesk)
         {
             if (string.IsNullOrEmpty(ticket.Id))
                 ticket.Id = ObjectId.GenerateNewId().ToString();
@@ -44,13 +43,75 @@ namespace NoSQL_project.Services
                 ticket.Date = DateTime.Now;
             }
 
+            if (!isServiceDesk)
+            {
+                ticket.UserId = currentUserId ?? throw new ArgumentException("User ID is required");
+            }
+            else if (string.IsNullOrEmpty(ticket.UserId))
+            {
+                throw new ArgumentException("Please select a user");
+            }
+
             _ticketRepo.Add(ticket);
         }
 
-        public void Update(string id, Ticket ticket)
+        public void Update(string id, Ticket ticket, string? userId, bool isServiceDesk)
         {
             ticket.Id = id;
+            
+            if (isServiceDesk && !string.IsNullOrEmpty(userId))
+            {
+                ticket.UserId = userId;
+            }
+            else
+            {
+                var existingTicket = GetById(id);
+                if (existingTicket != null)
+                {
+                    ticket.UserId = existingTicket.UserId;
+                }
+            }
+
             _ticketRepo.Update(id, ticket);
+        }
+
+        public List<Ticket> GetTicketsForUser(string userId, bool isServiceDesk, string? searchQuery)
+        {
+            List<Ticket> tickets;
+            if (isServiceDesk)
+            {
+                tickets = GetAll();
+            }
+            else
+            {
+                tickets = GetByUserId(userId);
+            }
+
+            if (!string.IsNullOrWhiteSpace(searchQuery))
+            {
+                var searchService = new TicketSearchService();
+                tickets = searchService.SearchTickets(tickets, searchQuery);
+            }
+            else
+            {
+                tickets = tickets.OrderByDescending(t => t.Date).ToList();
+            }
+
+            return tickets;
+        }
+
+        public bool CanAccessTicket(Ticket ticket, string userId, bool isServiceDesk)
+        {
+            return isServiceDesk || ticket.UserId == userId;
+        }
+
+        public User? GetTicketUser(string ticketId)
+        {
+            var ticket = GetById(ticketId);
+            if (ticket == null)
+                return null;
+
+            return _userRepo.GetById(ticket.UserId);
         }
 
         public void Delete(string id)
@@ -88,11 +149,6 @@ namespace NoSQL_project.Services
 
             return new DashboardViewModel(stats, recentTickets, IsServiceDesk);
         }
-        public List<PriorityCount> GetTicketsByPriority(string userId, bool isServiceDesk)
-        {
-            return _ticketRepo.GetTicketsByPriority(userId, isServiceDesk);
-        } 
-
     }
 }
 

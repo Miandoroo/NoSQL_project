@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NoSQL_project.Models;
-using NoSQL_project.Services;
 using NoSQL_project.Services.Interfaces;
 using System.Security.Claims;
 
@@ -12,48 +11,29 @@ namespace NoSQL_project.Controllers
     {
         private readonly ITicketService _ticketService;
         private readonly IUserService _userService;
-        private readonly TicketSearchService _searchService;
 
-        public TicketController(ITicketService ticketService, IUserService userService, TicketSearchService searchService)
+        public TicketController(ITicketService ticketService, IUserService userService)
         {
             _ticketService = ticketService;
             _userService = userService;
-            _searchService = searchService;
         }
 
-       public IActionResult Index(string searchQuery)
-       {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        private string? GetCurrentUserId() => User.FindFirstValue(ClaimTypes.NameIdentifier);
+        private bool IsServiceDesk() => User.IsInRole("ServiceDeskEmployee");
 
-            List<Ticket> tickets;
-            if (User.IsInRole("ServiceDeskEmployee"))
-            {
-                tickets = _ticketService.GetAll();
-            }
-            else
-            {
-                tickets = _ticketService.GetByUserId(userId);
-            }
-
-            if (!string.IsNullOrWhiteSpace(searchQuery))
-            {
-                tickets = _searchService.SearchTickets(tickets, searchQuery);
-            }
-            else
-            {
-                tickets = tickets.OrderByDescending(t => t.Date).ToList();
-            }
-
+        public IActionResult Index(string searchQuery)
+        {
+            var tickets = _ticketService.GetTicketsForUser(GetCurrentUserId(), IsServiceDesk(), searchQuery);
             ViewBag.SearchQuery = searchQuery;
-            return View(tickets);    
-       }
+            return View(tickets);
+        }
 
         [HttpGet]
         public IActionResult Create()
         {
             ViewBag.Users = _userService.GetAll();
-            ViewBag.IsServiceDesk = User.IsInRole("ServiceDeskEmployee");
-            ViewBag.CurrentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewBag.IsServiceDesk = IsServiceDesk();
+            ViewBag.CurrentUserId = GetCurrentUserId();
             return View();
         }
 
@@ -61,29 +41,24 @@ namespace NoSQL_project.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Ticket ticket)
         {
+            ModelState.Remove(nameof(Ticket.Id));
             if (ModelState.IsValid)
             {
-                if (!User.IsInRole("ServiceDeskEmployee"))
-        {
-                    ticket.UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                }
-                else if (string.IsNullOrEmpty(ticket.UserId))
+                try
                 {
-                    ModelState.AddModelError("UserId", "Please select a user");
-                    ViewBag.Users = _userService.GetAll();
-                    ViewBag.IsServiceDesk = User.IsInRole("ServiceDeskEmployee");
-                    ViewBag.CurrentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                    return View(ticket);
+                    _ticketService.Create(ticket, GetCurrentUserId(), IsServiceDesk());
+                    TempData["Success"] = "Ticket successfully created!";
+                    return RedirectToAction(nameof(Index));
                 }
-
-                _ticketService.Create(ticket);
-                TempData["Success"] = "Ticket successfully created!";
-                return RedirectToAction(nameof(Index));
+                catch (ArgumentException ex)
+                {
+                    ModelState.AddModelError("UserId", ex.Message);
+                }
             }
 
             ViewBag.Users = _userService.GetAll();
-            ViewBag.IsServiceDesk = User.IsInRole("ServiceDeskEmployee");
-            ViewBag.CurrentUserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            ViewBag.IsServiceDesk = IsServiceDesk();
+            ViewBag.CurrentUserId = GetCurrentUserId();
             return View(ticket);
         }
 
@@ -91,16 +66,12 @@ namespace NoSQL_project.Controllers
         {
             var ticket = _ticketService.GetById(id);
             if (ticket == null)
-            {
                 return NotFound();
-            }
 
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (!User.IsInRole("ServiceDeskEmployee") && ticket.UserId != userId)
+            if (!_ticketService.CanAccessTicket(ticket, GetCurrentUserId(), IsServiceDesk()))
                 return Forbid();
 
-            var user = _userService.GetById(ticket.UserId);
-            ViewBag.User = user;
+            ViewBag.User = _ticketService.GetTicketUser(id);
             return View(ticket);
         }
 
@@ -111,12 +82,11 @@ namespace NoSQL_project.Controllers
             if (ticket == null)
                 return NotFound();
 
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (!User.IsInRole("ServiceDeskEmployee") && ticket.UserId != userId)
+            if (!_ticketService.CanAccessTicket(ticket, GetCurrentUserId(), IsServiceDesk()))
                 return Forbid();
 
             ViewBag.Users = _userService.GetAll();
-            ViewBag.IsServiceDesk = User.IsInRole("ServiceDeskEmployee");
+            ViewBag.IsServiceDesk = IsServiceDesk();
             return View(ticket);
         }
 
@@ -128,28 +98,18 @@ namespace NoSQL_project.Controllers
             if (existingTicket == null)
                 return NotFound();
 
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            if (!User.IsInRole("ServiceDeskEmployee") && existingTicket.UserId != userId)
+            if (!_ticketService.CanAccessTicket(existingTicket, GetCurrentUserId(), IsServiceDesk()))
                 return Forbid();
 
             if (ModelState.IsValid)
             {
-                ticket.Id = id;
-                if (User.IsInRole("ServiceDeskEmployee") && !string.IsNullOrEmpty(UserId))
-                {
-                    ticket.UserId = UserId;
-                }
-                else
-                {
-                    ticket.UserId = existingTicket.UserId;
+                _ticketService.Update(id, ticket, UserId, IsServiceDesk());
+                TempData["Success"] = "Successfully edited ticket";
+                return RedirectToAction(nameof(Index));
             }
-                _ticketService.Update(id, ticket);
-            TempData["Success"] = "Successfully edited ticket";
-            return RedirectToAction(nameof(Index));
-        }
 
             ViewBag.Users = _userService.GetAll();
-            ViewBag.IsServiceDesk = User.IsInRole("ServiceDeskEmployee");
+            ViewBag.IsServiceDesk = IsServiceDesk();
             return View(ticket);
         }
 
@@ -159,9 +119,8 @@ namespace NoSQL_project.Controllers
         {
             var ticket = _ticketService.GetById(id);
             if (ticket == null)
-            {
                 return NotFound();
-            }
+            
             return View(ticket);
         }
 
@@ -173,13 +132,13 @@ namespace NoSQL_project.Controllers
             try
             {
                 _ticketService.Delete(id);
-            TempData["Success"] = "Ticket successfully deleted!";
-            return RedirectToAction(nameof(Index));
-        }
+                TempData["Success"] = "Ticket successfully deleted!";
+                return RedirectToAction(nameof(Index));
+            }
             catch (ArgumentException)
-        {
+            {
                 return NotFound();
-        }
+            }
         }
     }
 }

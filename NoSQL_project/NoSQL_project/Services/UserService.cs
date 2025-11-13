@@ -1,8 +1,11 @@
 using BCrypt.Net;
 using MongoDB.Bson;
 using NoSQL_project.Models;
+using NoSQL_project.Models.ViewModels;
 using NoSQL_project.Repositories.Interfaces;
 using NoSQL_project.Services.Interfaces;
+using NoSQL_project.Enum;
+using System.Security.Claims;
 
 namespace NoSQL_project.Services
 {
@@ -35,7 +38,6 @@ namespace NoSQL_project.Services
             return _userRepo.GetByEmail(email);
         }
 
-        /// Crud Operations
         public void Create(User user, string password)
         {
             if (!string.IsNullOrEmpty(password))
@@ -71,17 +73,12 @@ namespace NoSQL_project.Services
         public void Delete(string id)
         {
             var user = _userRepo.GetById(id);
-            try {
-                if (user == null)
-                    throw new ArgumentException("User not found");
-            }
-            catch (Exception ex)
-            {
-                throw new ArgumentException(ex.Message);
-            }
+            if (user == null)
+                throw new ArgumentException("User not found");
+            
             _userRepo.Delete(id);
         }
-        /// Password Hashing and Verification
+
         public string HashPassword(string password)
         {
             return BCrypt.Net.BCrypt.HashPassword(password);
@@ -109,6 +106,53 @@ namespace NoSQL_project.Services
                 return null;
 
             return user;
+        }
+
+        public List<Claim> CreateClaims(User user)
+        {
+            return new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.Id),
+                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role.ToString())
+            };
+        }
+
+        public User CreateUserFromRegister(RegisterViewModel model)
+        {
+            return new User
+            {
+                FirstName = model.FirstName,
+                LastName = model.LastName,
+                Email = model.Email,
+                Username = model.Username,
+                PhoneNumber = model.PhoneNumber ?? "",
+                Location = model.Location ?? "",
+                Type = model.Type ?? "",
+                Role = UserRoles.RegularEmployee
+            };
+        }
+
+        public bool ValidateUserRegistration(string username, string email, out string? errorMessage)
+        {
+            errorMessage = null;
+
+            var existingUserByUsername = GetByUsername(username);
+            if (existingUserByUsername != null)
+            {
+                errorMessage = "Username is already taken";
+                return false;
+            }
+
+            var existingUserByEmail = GetByEmail(email);
+            if (existingUserByEmail != null)
+            {
+                errorMessage = "Email is already registered";
+                return false;
+            }
+
+            return true;
         }
 
     }

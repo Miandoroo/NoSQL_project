@@ -127,7 +127,7 @@ namespace NoSQL_project.Services
             var lowerWord = word.ToLower();
             var subject = ticket.IncidentSubject?.ToLower() ?? "";
             var description = ticket.Description?.ToLower() ?? "";
-            var type = ticket.IncidentType?.ToLower() ?? "";
+            var type = ticket.IncidentType.ToString().ToLower();
 
             return subject.Contains(lowerWord) || 
                    description.Contains(lowerWord) || 
