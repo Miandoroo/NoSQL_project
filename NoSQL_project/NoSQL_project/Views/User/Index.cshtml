@@ -5,8 +5,8 @@
 }
 
 
-
 <h1>Users</h1>
+
 
 <div class="mb-3">
     <a asp-action="Create" class="btn btn-success">
@@ -42,16 +42,16 @@
                         <i class="bi bi-eye"></i> Details
                     </a>
                     <a asp-controller="Ticket"
-                       asp-action="Create"
-                       asp-route-userId="@user.Id"
-                       class="btn btn-sm btn-primary">
+                        asp-action="Create"
+                        asp-route-userId="@user.Id"
+                        class="btn btn-sm btn-primary">
                         <i class="bi bi-ticket-perforated"></i> Make a new ticket
                     </a>
                     <a asp-controller="User"
-                       asp-action="Update"
-                       asp-route-id="@user.Id"
-                       class="btn btn-sm btn-primary">
-                        <i class="bi bi-ticket-perforated"></i> Editing existing user
+                        asp-action="Update"
+                        asp-route-id="@user.Id"
+                        class="btn btn-sm btn-primary">
+                        <i class="bi bi-pencil"></i> Editing existing user
                     </a>
 
                     <form asp-action="Delete" asp-route-id="@user.Id" method="post" style="display: inline;">
